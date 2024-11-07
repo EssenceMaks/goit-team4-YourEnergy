@@ -5,11 +5,10 @@
     <link rel="icon" type="image/svg+xml" href="/goit-team4-YourEnergy/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team4 Your Energy</title>
-
-    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-CdCg-j1y.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/styles-B5mYtC8-.js">
+    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-UiCB2aOX.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/styles-Dz2HkqJ8.js">
     <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/vendor-CNNbG8jS.js">
-    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-BsrdkWxj.css">
+    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-n-YkO5KA.css">
     <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/index-CETVDBEY.css">
   </head>
   <body>
@@ -62,50 +61,21 @@
 </header>
 
     <h1 style="text-align: center">Team4 Your Energy</h1>
-    <main>
+    <div class="filters-panel">
+  <h2 class="filters-title">Exercises<span class="selected-category"></span></h2>
 
-      <div class="sidebar-container">
-  <div class="sidebar-quote-container">
-    <h4 class="sidebar-quote-of-day">Quote of the day</h4>
-    <p class="sidebar-quote"></p>
-    <h4 class="sidebar-quote-author"></h4>
-  </div>
-  <picture>
-    <source
-      media="(min-width: 1280px)"
-      srcset="../img/sidebar/sidebar-img-desktop@1x.jpg 1x, ../img/sidebar/sidebar-img-desktop@2x.jpg 2x"
-    />
-    <source
-      media="(min-width: 768px)"
-      srcset="../img/sidebar/sidebar-img-tablet@1x.jpg 1x, ../img/sidebar/sidebar-img-tablet@2x.jpg 2x"
-    />
-    <img
-      class="sidebar-quote-image"
-      srcset="../img/sidebar/sidebar-img-mobile@1x.jpg 1x, ../img/sidebar/sidebar-img-mobile@2x.jpg 2x"
-      src="../img/sidebar/sidebar-img-mobile@1x.jpg"
-      alt="sidebar-container"
-      loading="lazy"
-    />
-  </picture>
-  <div class="sidebar-sports-info">
-    <h4 class="sidebar-time">110 min</h4>
-    <h6 class="sidebar-norm-sport">Daily norm of sports</h6>
-    <p class="static-info">
-      The World Health Organization recommends at least 150 minutes of
-      moderate-intensity aerobic physical activity throughout the week for
-      adults aged 18-64. However, what happens if we adjust that number to 110
-      minutes every day? While it might seem like a high number to hit,
-      dedicating 110 minutes daily to sporting activities may offer unparalleled
-      benefits to physical health, mental well-being, and overall quality of
-      life.
-    </p>
+  <form class="search-form" id="search-form">
+    <input type="text" class="search-input" id="search-input" placeholder="Search" aria-label="Search exercises">
+    <button type="submit" class="search-button" aria-label="Start search"></button>
+  </form>
+
+  <div class="filters-buttons">
+    <button class="filter-button active" data-filter="muscles">Muscles</button>
+    <button class="filter-button" data-filter="body-parts">Body parts</button>
+    <button class="filter-button" data-filter="equipment">Equipment</button>
   </div>
 </div>
-<div class="categories-wrap-test">
-  <ul class="categories-list">
-    test
-  </ul>
-</div>
+    <main>
 
     </main>
 
@@ -129,9 +99,47 @@
     </ul>
   </div>
 
-
-    </main>
     
+      <div class="sidebar-container">
+  <div class="sidebar-quote-container">
+    <h4 class="sidebar-quote-of-day">Quote of the day</h4>
+    <p class="sidebar-quote"></p>
+    <h4 class="sidebar-quote-author"></h4>
+  </div>
+  <picture>
+    <source
+      media="(min-width: 1280px)"
+      srcset="/goit-team4-YourEnergy/assets/sidebar-img-desktop@1x-CxeGngm_.jpg 1x, /goit-team4-YourEnergy/assets/sidebar-img-desktop@2x-Bi4mR2ZG.jpg 2x"
+    />
+    <source
+      media="(min-width: 768px)"
+      srcset="/goit-team4-YourEnergy/assets/sidebar-img-tablet@1x-cCZFiTk6.jpg 1x, /goit-team4-YourEnergy/assets/sidebar-img-tablet@2x-BHsn_n0i.jpg 2x"
+    />
+    <img
+      class="sidebar-quote-image"
+      srcset="/goit-team4-YourEnergy/assets/sidebar-img-mobile@1x-FeKAmjRU.jpg 1x, /goit-team4-YourEnergy/assets/sidebar-img-mobile@2x-DiOBOa_G.jpg 2x"
+      src="/goit-team4-YourEnergy/assets/sidebar-img-mobile@1x-FeKAmjRU.jpg"
+      alt="sidebar-container"
+      loading="lazy"
+    />
+  </picture>
+  <div class="sidebar-sports-info">
+    <h4 class="sidebar-time">110 min</h4>
+    <h6 class="sidebar-norm-sport">Daily norm of sports</h6>
+    <p class="static-info">
+      The World Health Organization recommends at least 150 minutes of
+      moderate-intensity aerobic physical activity throughout the week for
+      adults aged 18-64. However, what happens if we adjust that number to 110
+      minutes every day? While it might seem like a high number to hit,
+      dedicating 110 minutes daily to sporting activities may offer unparalleled
+      benefits to physical health, mental well-being, and overall quality of
+      life.
+    </p>
+  </div>
+</div>
+
+    
+      
 
 <div
   class="pagination"
@@ -142,6 +150,8 @@
 </div>
 
 
+    
+    </main>
     <footer class="footer">
   <div class="footer-container container">
     <div class="footer-content">
