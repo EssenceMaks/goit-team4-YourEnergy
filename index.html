@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team4 Your Energy</title>
 
-    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-Ds9COf6h.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/styles--vHuEz3g.js">
+    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-CdCg-j1y.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/styles-B5mYtC8-.js">
     <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/vendor-CNNbG8jS.js">
-    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-CutVk67N.css">
+    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-BsrdkWxj.css">
     <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/index-CETVDBEY.css">
   </head>
   <body>
@@ -18,7 +18,7 @@
     <nav class="nav">
       <a class="logo" href="/" rel="noopener noreferrer" aria-label="YOUR ENERGY">
         <svg width="132" height="24">
-          <use href="/goit-team4-YourEnergy/assets/icons-2faPF8mF.svg#logo"></use>
+          <use href="/goit-team4-YourEnergy/assets/icons-9Nuf-a-Y.svg#logo"></use>
         </svg>
       </a>
       <ul class="menu-items">
@@ -33,28 +33,28 @@
         <li class="social-item">
           <a href="https://www.facebook.com/goITclub/" rel="noopener noreferrer" target="_blank" aria-label="Link to Facebook">
             <svg width="28" height="28">
-              <use href="/goit-team4-YourEnergy/assets/icons-2faPF8mF.svg#facebook"></use>
+              <use href="/goit-team4-YourEnergy/assets/icons-9Nuf-a-Y.svg#facebook"></use>
             </svg>
           </a>
         </li>
         <li class="social-item">
           <a href="https://www.instagram.com/goitclub/" rel="noopener noreferrer" target="_blank" aria-label="Link to Instagram">
             <svg width="28" height="28">
-              <use href="/goit-team4-YourEnergy/assets/icons-2faPF8mF.svg#instagram"></use>
+              <use href="/goit-team4-YourEnergy/assets/icons-9Nuf-a-Y.svg#instagram"></use>
             </svg>
           </a>
         </li>
         <li class="social-item">
           <a href="https://www.youtube.com/c/GoIT" rel="noopener noreferrer" target="_blank" aria-label="Link to Youtube">
             <svg width="28" height="28">
-              <use href="/goit-team4-YourEnergy/assets/icons-2faPF8mF.svg#youtube"></use>
+              <use href="/goit-team4-YourEnergy/assets/icons-9Nuf-a-Y.svg#youtube"></use>
             </svg>
           </a>
         </li>
       </ul>
-      <button type="button" class="menu-btn">
+      <button type="button" class="menu-btn" onclick="openMenu()">
         <svg width="32" height="32">
-          <use href="/goit-team4-YourEnergy/assets/icons-2faPF8mF.svg#menu"></use>
+          <use href="/goit-team4-YourEnergy/assets/icons-9Nuf-a-Y.svg#menu"></use>
         </svg>
       </button>
     </nav>
@@ -123,7 +123,7 @@
     <button class="filter-button" data-filter="equipment">Equipment</button>
   </div>
 </div>
-    
+
         <div class="categories-wrap">
     <ul class="categories-list">      
     </ul>
@@ -159,7 +159,7 @@
             height="14"
             aria-hidden="true"
           >
-            <use x="0" y="0" href="/goit-team4-YourEnergy/assets/icons-2faPF8mF.svg#icon-your-energy"></use>
+            <use x="0" y="0" href="/goit-team4-YourEnergy/assets/icons-9Nuf-a-Y.svg#icon-your-energy"></use>
           </svg>
         </a>
       
@@ -178,7 +178,7 @@
                 height="24"
                 aria-hidden="true"
               >
-                <use x="0" y="0" href="/goit-team4-YourEnergy/assets/icons-2faPF8mF.svg#icon-facebook"></use>
+                <use x="0" y="0" href="/goit-team4-YourEnergy/assets/icons-9Nuf-a-Y.svg#icon-facebook"></use>
               </svg>
             </a>
           </li>
@@ -196,7 +196,7 @@
                 height="24"
                 aria-hidden="true"
               >
-                <use x="0" y="0" href="/goit-team4-YourEnergy/assets/icons-2faPF8mF.svg#icon-instagram"></use>
+                <use x="0" y="0" href="/goit-team4-YourEnergy/assets/icons-9Nuf-a-Y.svg#icon-instagram"></use>
               </svg>
             </a>
           </li>
@@ -214,7 +214,7 @@
                 height="24"
                 aria-hidden="true"
               >
-                <use x="0" y="0" href="/goit-team4-YourEnergy/assets/icons-2faPF8mF.svg#icon-youtube"></use>
+                <use x="0" y="0" href="/goit-team4-YourEnergy/assets/icons-9Nuf-a-Y.svg#icon-youtube"></use>
               </svg>
             </a>
           </li>
@@ -258,6 +258,69 @@
   </div> 
 </footer>
 
+    <div id="backdrop" class="backdrop" onclick="closeMenu()">
+  <div class="mobile-menu" onclick="menuLayoutClickHandler(event)">
+    <div class="btn-menu-wrap">
+      <button
+        type="button"
+        onclick="closeMenu()"
+        class="menu-close-button"
+        aria-label="Close mobile menu button"
+      >
+        <svg class="menu-close-icon" width="32" height="32">
+          <use href="/goit-team4-YourEnergy/assets/icons-9Nuf-a-Y.svg#icon-x_icon"></use>
+        </svg>
+      </button>
+    </div>
+    <ul class="menu-items">
+      <li class="menu-item" onclick="closeMenu()">
+        <a href="/">Home</a>
+      </li>
+      <li class="menu-item" onclick="closeMenu()">
+        <a href="/favorites">Favorites</a>
+      </li>
+    </ul>
+
+    <ul class="socials">
+      <li class="social-item">
+        <a
+          href="https://www.facebook.com/goITclub/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Link to Facebook"
+        >
+          <svg class="social-icon" width="26" height="26">
+            <use href="/goit-team4-YourEnergy/assets/icons-9Nuf-a-Y.svg#facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="social-item">
+        <a
+          href="https://www.instagram.com/goitclub/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Link to Instagram"
+        >
+          <svg class="social-icon" width="26" height="26">
+            <use href="/goit-team4-YourEnergy/assets/icons-9Nuf-a-Y.svg#instagram"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="social-item">
+        <a
+          href="https://www.youtube.com/c/GoIT"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Link to Youtube"
+        >
+          <svg class="social-icon" width="26" height="26">
+            <use href="/goit-team4-YourEnergy/assets/icons-9Nuf-a-Y.svg#youtube"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
 
   </body>
 </html>
