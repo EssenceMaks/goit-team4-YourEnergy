@@ -5,10 +5,12 @@
     <link rel="icon" type="image/svg+xml" href="/goit-team4-YourEnergy/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team4 Your Energy</title>
-    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-CHrQ_1br.js"></script>
+
+    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-BIgZkmB_.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/styles-D8W_Hg0c.js">
     <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/vendor-CNNbG8jS.js">
     <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-MY_ZLhIN.css">
+    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/index-DiKIaFFi.css">
   </head>
   <body>
     <header class="header">
@@ -61,10 +63,27 @@
 
     <h1 style="text-align: center">Team4 Your Energy</h1>
     <main>
+
+      <div class="filters-panel">
+  <h2 class="filters-title">Exercises<span class="selected-category"></span></h2>
+
+  <form class="search-form" id="search-form">
+    <input type="text" class="search-input" id="search-input" placeholder="Search" aria-label="Search exercises">
+    <button type="submit" class="search-button" aria-label="Start search"></button>
+  </form>
+
+  <div class="filters-buttons">
+    <button class="filter-button active" data-filter="muscles">Muscles</button>
+    <button class="filter-button" data-filter="body-parts">Body parts</button>
+    <button class="filter-button" data-filter="equipment">Equipment</button>
+  </div>
+</div>
+
         <div class="categories-wrap">
     <ul class="categories-list">      
     </ul>
   </div>
+
 
     </main>
     
