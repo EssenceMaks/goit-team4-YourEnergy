@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Management System</title>
-  <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/styles-Dz2HkqJ8.js"></script>
-  <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/task-manager-DOtOvWIw.js"></script>
+    
+
+  <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/task-management-DLB-MEM-.css">
   <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-n-YkO5KA.css">
-  <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/task-manager-fkNhSTry.css">
+  <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/task-manager-Di9FvUSR.css">
 </head>
 <body>
     <header class="header">
@@ -60,6 +61,19 @@
 
 
     <div class="container">
+        <!-- Галерея изображений -->
+        <div class="task-images-gallery">
+            <div class="gallery-container" id="taskImagesGrid">
+                <!-- Сюда будут добавляться картинки -->
+            </div>
+        </div>
+
+        <!-- Новый блок с сеткой задач -->
+        <div class="tasks-compact-grid" id="tasksCompactGrid">
+            <!-- Сюда будут добавляться задачи в компактном виде -->
+        </div>
+
+        <!-- Таблица задач -->
         <div class="task-grid">
             <!-- Заголовки -->
             <div class="header-cell"></div>
@@ -67,13 +81,6 @@
             <div class="header-cell">In Progress</div>
             <div class="header-cell">To Verify</div>
             <div class="header-cell">Done</div>
-
-            <!-- Top-priority строка -->
-            <div class="priority-cell">Top-priority</div>
-            <div class="drop-zone" data-priority="top-priority" data-status="who-take"></div>
-            <div class="drop-zone" data-priority="top-priority" data-status="in-progress"></div>
-            <div class="drop-zone" data-priority="top-priority" data-status="to-verify"></div>
-            <div class="drop-zone" data-priority="top-priority" data-status="done"></div>
 
             <!-- Important строка -->
             <div class="priority-cell">Important</div>
@@ -147,72 +154,95 @@
     <!-- Модальные окна -->
     <div id="taskModal" class="modal">
     <div class="modal-content">
-        <div class="modal-header">
-            <h2>Задача</h2>
-            <div class="modal-controls">
-                <button type="button" class="delete-task-btn" style="display: none;">Удалить</button>
+        <form id="taskForm" class="modal-grid">
+            <!-- Row 1: Title and Delete button -->
+            <div class="title-row">
+                <input type="text" id="taskTitle" placeholder="Заголовок задачи" required>
+                <button type="button" class="delete-task-btn">Удалить<br>задачу</button>
                 <span class="close">&times;</span>
             </div>
-        </div>
-        <form id="taskForm">
-            <input type="text" id="taskTitle" placeholder="Заголовок задачи" required>
-            <div class="task-number-container">
-                <input type="text" id="taskNumber" placeholder="Номер задачи (необязательно)" pattern="[0-9]*">
-                <div id="taskNumberSuggestions" class="suggestions-container"></div>
+
+            <!-- Row 2: Image section -->
+            <div class="image-row">
+                <button type="button" id="addImageBtn" class="add-image-btn">
+                    <i class="fas fa-plus"></i> Добавить изображение
+                </button>
+                <div id="taskImagePreview" class="task-image-preview"></div>
+                <input type="file" id="taskImageInput" accept="image/*" style="display: none;">
             </div>
-            <textarea id="taskDescription" placeholder="Описание задачи" required></textarea>
-            <select id="taskCategory" required>
-                <option value="Must_Have" selected>Must Have</option>
-                <option value="Upgrade">Upgrade</option>
-                <option value="Specific">Specific</option>
-            </select>
-            <select id="taskPriority" required>
-                <option value="top-priority">Top-priority</option>
-                <option value="important">Important</option>
-                <option value="to-fix">To Fix</option>
-                <option value="normal">Normal</option>
-            </select>
-            <select id="taskStatus" required>
-                <option value="who-take">Who Take</option>
-                <option value="in-progress">In Progress</option>
-                <option value="to-verify">To Verify</option>
-                <option value="done">Done</option>
-            </select>
-            <div class="assignees-container">
-                <div class="assignee-header">
-                    <label>Исполнители</label>
-                    <button type="button" id="addAssigneeBtn" class="add-assignee-btn">+</button>
-                </div>
-                <div id="assigneesList">
-                    <div class="assignee-item">
-                        <select class="taskAssignee" required>
-                            <option value="empty">Empty</option>
-                            <option value="Andrii Sushylnikov">Andrii Sushylnikov</option>
-                            <option value="Daria Honcharuk">Daria Honcharuk</option>
-                            <option value="Dmytro Mayevsky">Dmytro Mayevsky</option>
-                            <option value="Maks Ki">Maks Ki</option>
-                            <option value="Mariia Sv.">Mariia Sv.</option>
-                            <option value="Roman Turas">Roman Turas</option>
-                            <option value="Viktoriia Didenko">Viktoriia Didenko</option>
-                            <option value="Hryhorii Chernysh">Hryhorii Chernysh (Mentor)</option>
-                            <option value="Daria">Daria (client manager)</option>
-                            <option value="Lesya Katanova">Lesya Katanova</option>
-                            <option value="Olena Deineha">Olena Deineha</option>
-                        </select>
-                        <button type="button" class="remove-assignee-btn">×</button>
+
+            <!-- Row 3: Assignees -->
+            <div class="assignees-row">
+                <div class="assignees-container">
+                    <div class="assignee-header">
+                        <label>Исполнители</label>
+                        <button type="button" id="addAssigneeBtn" class="add-assignee-btn">+</button>
+                    </div>
+                    <div id="assigneesList">
+                        <div class="assignee-item">
+                            <select class="taskAssignee" required>
+                                <option value="empty">Empty</option>
+                                <option value="Andrii Sushylnikov">Andrii Sushylnikov</option>
+                                <option value="Daria Honcharuk">Daria Honcharuk</option>
+                                <option value="Dmytro Mayevsky">Dmytro Mayevsky</option>
+                                <option value="Maks Ki">Maks Ki</option>
+                                <option value="Mariia Sv.">Mariia Sv.</option>
+                                <option value="Roman Turas">Roman Turas</option>
+                                <option value="Viktoriia Didenko">Viktoriia Didenko</option>
+                                <option value="Hryhorii Chernysh">Hryhorii Chernysh (Mentor)</option>
+                                <option value="Daria">Daria (client manager)</option>
+                                <option value="Lesya Katanova">Lesya Katanova</option>
+                                <option value="Olena Deineha">Olena Deineha</option>
+                            </select>
+                            <button type="button" class="remove-assignee-btn">×</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="subtasks-container">
-                <div class="subtasks-header">
-                    <label>Подзадачи</label>
-                    <button type="button" id="addSubtaskBtn" class="add-subtask-btn">+</button>
+
+            <!-- Row 4: Task details -->
+            <div class="details-row">
+                <div class="task-number-container">
+                    <input type="text" id="taskNumber" placeholder="№" pattern="[0-9]{1,6}" maxlength="6">
+                    <div id="taskNumberSuggestions" class="suggestions-container"></div>
                 </div>
-                <div id="subtasksList">
-                    <!-- Здесь будут подзадачи -->
+                <select id="taskCategory" required>
+                    <option value="Must_Have" selected>Must Have</option>
+                    <option value="Upgrade">Upgrade</option>
+                    <option value="Specific">Specific</option>
+                </select>
+                <select id="taskPriority" required>
+                    <option value="important">Important</option>
+                    <option value="to-fix">To Fix</option>
+                    <option value="normal">Normal</option>
+                </select>
+                <select id="taskStatus" required>
+                    <option value="who-take">Who Take</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="to-verify">To Verify</option>
+                    <option value="done">Done</option>
+                </select>
+            </div>
+
+            <!-- Row 5: Description -->
+            <div class="description-row">
+                <textarea id="taskDescription" placeholder="Описание задачи" required></textarea>
+            </div>
+
+            <!-- Row 6: Subtasks -->
+            <div class="subtasks-row">
+                <div class="subtasks-container">
+                    <div class="subtasks-header">
+                        <label>Подзадачи</label>
+                        <button type="button" id="addSubtaskBtn" class="add-subtask-btn">+</button>
+                    </div>
+                    <div id="subtasksList">
+                        <!-- Subtasks will be added here -->
+                    </div>
                 </div>
             </div>
-            <button type="submit">Сохранить</button>
+
+            <button type="submit" class="save-btn">Сохранить</button>
         </form>
     </div>
 </div>
@@ -227,7 +257,8 @@
         </div>
     </div>
 </div> 
-
+    
+    <script src="./js/task-manager.js"></script>
     <!-- Модальное окно подтверждения удаления -->
     <div id="deleteConfirmModal" class="modal">
         <div class="modal-content delete-confirm">
@@ -356,6 +387,9 @@
   </div> 
 </footer>
 
+
+    <!-- Скрипты в конце body
+    <script src="./js/dev-drive.js"></script> -->
 
 </body>
 </html> 
