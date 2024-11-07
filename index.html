@@ -5,10 +5,10 @@
     <link rel="icon" type="image/svg+xml" href="/goit-team4-YourEnergy/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team4 Your Energy</title>
-    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-m0s8zBZp.js"></script>
+    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-DIm2TeDd.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/vendor-CNNbG8jS.js">
     <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/index-CETVDBEY.css">
-    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-Ch6bfngh.css">
+    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-CDHVo2Ga.css">
   </head>
   <body>
     <header class="header">
@@ -122,15 +122,28 @@
 </div>
 
     
-      
+      <div>
 
-<div
-  class="pagination"
-  current-page="0"
-  total-pages="4"
->
+  <label>
+    total pages
+    <input class="input-total-pages" value="4" />
+  </label>
+
+  <div
+    class="pagination bind"
+    current-page="0"
+    total-pages="4"
+  ></div>
 
 </div>
+
+<script>
+  const input = document.querySelector('.input-total-pages');
+  const pagination = document.querySelector('.bind');
+  input.addEventListener('change', () => {
+    pagination.setAttribute('total-pages', input.value);
+  });
+</script>
 
 
     
