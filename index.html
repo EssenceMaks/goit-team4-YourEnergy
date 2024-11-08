@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/goit-team4-YourEnergy/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team4 Your Energy</title>
-    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-BmjnxLN0.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/vendor-CNNbG8jS.js">
-    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/index-BfjDP4OR.css">
-    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-B8-kfohl.css">
-  </head>
-  <body>
-    <header class="header">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/goit-team4-YourEnergy/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team4 Your Energy</title>
+  <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-B0gD_aFW.js"></script>
+  <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/vendor-CNNbG8jS.js">
+  <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/index-BfjDP4OR.css">
+  <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-AwLLvG-W.css">
+</head>
+<body>
+  <header class="header">
   <div class="container">
     <nav class="nav">
       <a class="logo" href="/" rel="noopener noreferrer" aria-label="YOUR ENERGY">
@@ -19,7 +20,7 @@
           <use href="/goit-team4-YourEnergy/assets/icons-9Nuf-a-Y.svg#logo"></use>
         </svg>
       </a>
-      <ul class="menu-items">
+      <ul class="menu-items router">
         <li class="menu-item active">
           <a href="/">Home</a>
         </li>
@@ -59,8 +60,9 @@
   </div>
 </header>
 
-    <h1 style="text-align: center">Team4 Your Energy</h1>
 
+  <div class="home-page">
+    <h1 style="text-align: center">Team4 Your Energy</h1>
     <div class="filters-panel">
   <h2 class="filters-title">Exercises<span class="selected-category"></span></h2>
 
@@ -75,26 +77,7 @@
     <button class="filter-button" data-filter="equipment">Equipment</button>
   </div>
 </div>
-
     <main>
-      <div class="categories">
-  <div class="categories-wrap">
-    <ul class="categories-list"></ul>
-  </div>
-  <div>
-    <div
-      class="pagination bind categories-pagination workouts-pagination"
-      data-current="0"
-      data-total="0"
-    ></div>
-  </div>
-</div>
-
-      <div class="workouts-container">
-  <ul class="workouts-container-list"></ul>
-</div>
-
-
       <div class="sidebar-container">
   <div class="sidebar-quote-container">
     <h4 class="sidebar-quote-of-day">Quote of the day</h4>
@@ -133,32 +116,21 @@
   </div>
 </div>
 
-
-      <!-- <div>
-
-  <label>
-    total pages
-    <input class="input-total-pages" value="4" />
-  </label>
-
-  <div
-    class="pagination bind"
-    current-page="0"
-    total-pages="4"
-  ></div>
-
-</div> -->
-
-<!-- <script>
-  const input = document.querySelector('.input-total-pages');
-  const pagination = document.querySelector('.bind');
-  input.addEventListener('change', () => {
-    pagination.setAttribute('total-pages', input.value);
-  });
-</script> -->
-
+      <div class="categories">
+  <div class="categories-wrap">
+    <ul class="categories-list"></ul>
+  </div>
+  <div>
+    <div
+      class="pagination bind categories-pagination workouts-pagination"
+      data-current="0"
+      data-total="0"
+    ></div>
+  </div>
+</div>
 
     </main>
+
     <footer class="footer">
   <div class="footer-container container">
     <div class="footer-content">
@@ -274,7 +246,51 @@
   </div> 
 </footer>
 
-    <div id="backdrop" class="backdrop" onclick="closeMenu()">
+  </div>
+
+  <div class="favorites-page hidden">
+    <div class="container">
+  <h2 class="favorites-title">Favorites</h2>
+
+  <div class="bars-wrapper">
+    <div class="left-bar">
+      <div class="sidebar-quote-container favorites-card">
+        <h4 class="sidebar-quote-of-day">Quote of the day</h4>
+        <p class="sidebar-quote"></p>
+        <h4 class="sidebar-quote-author"></h4>
+      </div>
+      <div class="card-group">
+        <picture>
+          <source
+            media="(min-width: 1280px)"
+            srcset="/goit-team4-YourEnergy/assets/sidebar-img-desktop@1x-CxeGngm_.jpg 1x, /goit-team4-YourEnergy/assets/sidebar-img-desktop@2x-Bi4mR2ZG.jpg 2x"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="/goit-team4-YourEnergy/assets/sidebar-img-tablet@1x-cCZFiTk6.jpg 1x, /goit-team4-YourEnergy/assets/sidebar-img-tablet@2x-BHsn_n0i.jpg 2x"
+          />
+          <img
+            class="sidebar-quote-image"
+            srcset="/goit-team4-YourEnergy/assets/sidebar-img-mobile@1x-FeKAmjRU.jpg 1x, /goit-team4-YourEnergy/assets/sidebar-img-mobile@2x-DiOBOa_G.jpg 2x"
+            src="/goit-team4-YourEnergy/assets/sidebar-img-mobile@1x-FeKAmjRU.jpg"
+            alt="sidebar-container"
+            loading="lazy"
+          />
+        </picture>
+        <div class="sidebar-sports-info">
+          <h4 class="sidebar-time">110 min</h4>
+          <h6 class="sidebar-norm-sport">Daily norm of sports</h6>
+        </div>
+      </div>
+    </div>
+    <div class="right-bar saved">
+
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div id="backdrop" class="backdrop" onclick="closeMenu()">
   <div class="mobile-menu" onclick="menuLayoutClickHandler(event)">
     <div class="btn-menu-wrap">
       <button
@@ -337,6 +353,5 @@
     </ul>
   </div>
 </div>
-
-  </body>
+</body>
 </html>
