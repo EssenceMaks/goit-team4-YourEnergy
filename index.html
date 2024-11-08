@@ -6,10 +6,10 @@
   <link rel="icon" type="image/svg+xml" href="/goit-team4-YourEnergy/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Team4 Your Energy</title>
-  <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-B0gD_aFW.js"></script>
+  <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-Cuqt8k6H.js"></script>
   <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/vendor-CNNbG8jS.js">
   <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/index-BfjDP4OR.css">
-  <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-AwLLvG-W.css">
+  <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-DxVUfhZB.css">
 </head>
 <body>
   <header class="header">
@@ -293,6 +293,116 @@
   </div>
 </div>
   </div>
+  <div class="modal-backdrop is-hidden" data-modal>
+  <div class="modal">
+    <button type="button" class="modal-close-btn" data-modal-close>
+      <svg class="modal-close-icon" width="24" height="24">
+        <use href="/goit-team4-YourEnergy/assets/sprite-E8vg0sBb.svg#icon-close"></use>
+      </svg>
+    </button>
+    
+    <div class="modal-content">
+      <div class="modal-media">
+        <div class="modal-media-container">
+          <!-- Зображення буде додано через JavaScript -->
+        </div>
+      </div>
+      
+      <div class="modal-info">
+        <div class="modal-info-description">
+            <div class="modal-title-rating">
+                <h3 class="modal-title"><!-- Назва вправи буде додана через JavaScript --></h3>
+                
+                <div class="modal-rating">
+                    <p class="rating-value">
+                        <!-- Значення рейтингу буде додано через JavaScript -->
+                    </p>
+                    <div class="rating-stars">
+                        <!-- Зірки рейтингу будуть додані через JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="modal-parameters">
+            <!-- Один шаблонний елемент -->
+            <li class="parameter-item">
+                <p class="modal-parameter-label"></p>
+                <p class="modal-parameter-value"></p>
+            </li>
+            </ul>
+            
+            <p class="modal-description">
+            <!-- Опис буде додано через JavaScript -->
+            </p>
+        </div>
+        
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="modal-btn modal-favorites-btn">
+        Add to favorites
+        <svg class="modal-icon-heart">
+          <use href="/goit-team4-YourEnergy/assets/sprite-E8vg0sBb.svg#icon-heart"></use>
+        </svg>
+      </button>
+      <button type="button" class="modal-btn modal-rating-btn">
+        Give a rating
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Додаємо нове модальне вікно для рейтингу після основного -->
+<div class="modal-backdrop is-hidden" data-rating-modal>
+  <div class="modal rating-modal">
+    <button type="button" class="modal-close-btn" data-rating-close>
+      <svg class="modal-close-icon" width="24" height="24">
+        <use href="/goit-team4-YourEnergy/assets/sprite-E8vg0sBb.svg#icon-close"></use>
+      </svg>
+    </button>
+    
+    <form class="rating-form">
+
+      <div class="rating-form-stars-container">
+        <p class="rating-form-stars-title">Rating</p>
+        <div class="rating-form-value-stars">
+          <p class="rating-form-value">
+            <!-- Значення рейтингу буде додано через JavaScript -->
+          </p>
+          <div class="rating-form-stars">
+            <!-- Зірки рейтингу будуть додані через JavaScript -->
+          </div>
+        </div>
+      </div>
+      
+      <div class="rating-form-group-container">
+          <div class="rating-form-group">
+            <input 
+            type="email" 
+            id="rating-email" 
+            class="rating-form-input" 
+            placeholder="Email"
+            required
+          >
+          </div>
+      
+        <div class="rating-form-group">
+          <textarea 
+            id="rating-comment" 
+            class="rating-form-textarea"
+            placeholder="Your comment"
+            required
+          ></textarea>
+        </div>
+      </div>
+      
+      <button type="submit" class="modal-btn rating-form-btn">
+        Send
+      </button>
+    </form>
+  </div>
+</div>
+
 
   <div id="backdrop" class="backdrop" onclick="closeMenu()">
   <div class="mobile-menu" onclick="menuLayoutClickHandler(event)">
