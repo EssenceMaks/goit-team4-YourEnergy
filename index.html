@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/goit-team4-YourEnergy/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Team4 Your Energy</title>
-  <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-CqmKS-k9.js"></script>
-  <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/vendor-CNNbG8jS.js">
-  <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-DhRqvq79.css">
-</head>
-<body>
-
-  <header class="header">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/goit-team4-YourEnergy/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team4 Your Energy</title>
+    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-DSEQ_ow1.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/vendor-CNNbG8jS.js">
+    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-96BxkRRZ.css">
+  </head>
+  <body>
+    <header class="header">
   <div class="container">
     <nav class="nav">
       <a class="logo" href="/" rel="noopener noreferrer" aria-label="YOUR ENERGY">
@@ -22,10 +20,10 @@
       </a>
       <ul class="menu-items router">
         <li class="menu-item active">
-          <a href="/">Home</a>
+          <a href="./index.html">Home</a>
         </li>
         <li class="menu-item">
-          <a href="/favorites">Favorites</a>
+          <a href="favorites">Favorites</a>
         </li>
       </ul>
       <ul class="socials">
@@ -61,8 +59,9 @@
 </header>
 
 
-    <div class="home-page">
-      <div class="hero">
+    <main class="home-page">
+      <section class="hero">
+<div class="container">
 
   <div class="hero__text-content">
     <div class="hero__title-wrapper">
@@ -84,56 +83,112 @@
   </div>
 
   <div class="hero__media-content">
-    <div class="hero__images">
-      <picture>
+    <picture class="hero-small-photo hidden-photo">
+      <source
+        media="(min-width: 1440px) and (min-resolution: 2dppx)"
+        srcset="/goit-team4-YourEnergy/assets/image_desktop_2x_jpg-BQRFqRsk.jpg 2x"
+      />
+      <source
+        media="(min-width: 1440px)"
+        srcset="/goit-team4-YourEnergy/assets/image_desktop_1x_jpg-kS2ogFuJ.jpg"
+      />
+      <img
+        class="hero-photo-small"
+        src="/goit-team4-YourEnergy/assets/image_desktop_1x_jpg-kS2ogFuJ.jpg"
+        alt="Two sportswomen against the backdrop of nature"
+      />
+    </picture>
+      <!-- <picture>
         <source
-          srcset="/goit-team4-YourEnergy/assets/image_mobile_1x_webp-Bqp_cjlv.webp 1x, /goit-team4-YourEnergy/assets/image_mobile_2x_webp-BBaNeV9q.webp 2x"
+          srcset="
+            /img/hero_images/image_mobile_1x_webp.webp 1x,
+            /img/hero_images/image_mobile_2x_webp.webp 2x
+          "
           type="image/webp"
         />
         <source
-          srcset="/goit-team4-YourEnergy/assets/image_mobile_1x_jpg-BITQmRab.jpg 1x, /goit-team4-YourEnergy/assets/image_mobile_2x_jpg-BT8snRcq.jpg 2x"
+          srcset="
+            /img/hero_images/image_mobile_1x_jpg.jpg 1x,
+            /img/hero_images/image_mobile_2x_jpg.jpg 2x
+          "
           type="image/jpeg"
         />
         <img
           class="hero__image hero__image--mobile"
+          src="/img/hero_images/image_mobile_1x_jpg.jpg"
+          alt="Young women giving a high-five"
+          loading="lazy"
+        />
+      </picture>
+      <picture>
+        <source
+          srcset="
+            /img/hero_images/image_tablet_1x_webp.webp 1x,
+            /img/hero_images/image_tablet_2x_webp.webp 2x
+          "
+          type="image/webp"
+        />
+        <source
+          srcset="
+            /img/hero_images/image_tablet_1x_jpg.jpg 1x,
+            /img/hero_images/image_tablet_2x_jpg.jpg 2x
+          "
+          type="image/jpeg"
+        />
+        <img
+          class="hero__image hero__image--tablet"
+          src="/img/hero_images/image_tablet_1x_jpg.jpg"
+          alt="Young women giving a high-five"
+          loading="lazy"
+        />
+      </picture>
+      <picture>
+        <source
+          srcset="
+            /img/hero_images/image_desktop_1x_webp.webp 1x,
+            /img/hero_images/image_desktop_2x_webp.webp 2x
+          "
+          type="image/webp"
+        />
+        <source
+          srcset="
+            /img/hero_images/image_desktop_1x_jpg.jpg 1x,
+            /img/hero_images/image_desktop_2x_jpg.jpg 2x
+          "
+          type="image/jpeg"
+        />
+        <img
+          class="hero__image hero__image--desktop"
+          src="/img/hero_images/image_desktop_1x_jpg.jpg"
+          alt="Young women giving a high-five"
+          loading="lazy"
+        />
+      </picture> -->
+      <picture>
+        <source
+          srcset="/goit-team4-YourEnergy/assets/image_mobile_1x_webp-Bqp_cjlv.webp 1x, /goit-team4-YourEnergy/assets/image_mobile_2x_webp-BBaNeV9q.webp 2x"
+          type="image/webp"
+          media="(max-width: 767px)"
+        />
+      
+        <source
+          srcset="/goit-team4-YourEnergy/assets/image_tablet_1x_webp-BbWRArFl.webp 1x, /goit-team4-YourEnergy/assets/image_tablet_2x_webp-x_h8jmBQ.webp 2x"
+          type="image/webp"
+          media="(min-width: 768px)"
+        />
+        <source
+          srcset="/goit-team4-YourEnergy/assets/desktop_high_five_1x_jpg-DIdmp51X.jpg 1x, /goit-team4-YourEnergy/assets/desktop_high_five_2x_jpg-BJOkVT8x.jpg 2x"
+          type="image/jpeg"
+          media="(min-width: 1440px)"
+        />
+      
+        <img
+          class="hero__image"
           src="/goit-team4-YourEnergy/assets/image_mobile_1x_jpg-BITQmRab.jpg"
           alt="Young women giving a high-five"
           loading="lazy"
         />
       </picture>
-      <picture>
-        <source
-          srcset="/goit-team4-YourEnergy/assets/image_tablet_1x_webp-BbWRArFl.webp 1x, /goit-team4-YourEnergy/assets/image_tablet_2x_webp-x_h8jmBQ.webp 2x"
-          type="image/webp"
-        />
-        <source
-          srcset="/goit-team4-YourEnergy/assets/image_tablet_1x_jpg-BJlIqU_x.jpg 1x, /goit-team4-YourEnergy/assets/image_tablet_2x_jpg-Z6rgj2o_.jpg 2x"
-          type="image/jpeg"
-        />
-        <img
-          class="hero__image hero__image--tablet"
-          src="/goit-team4-YourEnergy/assets/image_tablet_1x_jpg-BJlIqU_x.jpg"
-          alt="Young women giving a high-five"
-          loading="lazy"
-        />
-      </picture>
-      <picture>
-        <source
-          srcset="/goit-team4-YourEnergy/assets/image_desktop_1x_webp-DOFvvmWT.webp 1x, /goit-team4-YourEnergy/assets/image_desktop_2x_webp-CbhYUg9B.webp 2x"
-          type="image/webp"
-        />
-        <source
-          srcset="/goit-team4-YourEnergy/assets/image_desktop_1x_jpg-kS2ogFuJ.jpg 1x, /goit-team4-YourEnergy/assets/image_desktop_2x_jpg-BQRFqRsk.jpg 2x"
-          type="image/jpeg"
-        />
-        <img
-          class="hero__image hero__image--desktop"
-          src="/goit-team4-YourEnergy/assets/image_desktop_1x_jpg-kS2ogFuJ.jpg"
-          alt="Young women giving a high-five"
-          loading="lazy"
-        />
-      </picture>
-    </div>
     <div class="hero__tags">
       <p class="hero__tag">#Sport</p>
       <p class="hero__tag">#Healthy</p>
@@ -142,29 +197,35 @@
     </div>
   </div>
 
-  <div class="hero__wide-image">
+  <!-- <div class="hero__wide-image">
     <picture>
       <source
-        srcset="/goit-team4-YourEnergy/assets/desktop_high_five_1x_webp-DMX4A7kH.webp 1x, /goit-team4-YourEnergy/assets/desktop_high_five_2x_webp-BEbQcV_b.webp 2x"
+        srcset="
+          /img/hero_images/desktop_high_five_1x_webp.webp 1x,
+          /img/hero_images/desktop_high_five_2x_webp.webp 2x
+        "
         type="image/webp"
       />
       <source
-        srcset="/goit-team4-YourEnergy/assets/desktop_high_five_1x_jpg-DIdmp51X.jpg 1x, /goit-team4-YourEnergy/assets/desktop_high_five_2x_jpg-BJOkVT8x.jpg 2x"
+        srcset="
+          /img/hero_images/desktop_high_five_1x_jpg.jpg 1x,
+          /img/hero_images/desktop_high_five_2x_jpg.jpg 2x
+        "
         type="image/jpeg"
       />
       <img
         class="hero__image--wide"
-        src="/goit-team4-YourEnergy/assets/desktop_high_five_1x_jpg-DIdmp51X.jpg"
+        src="/img/hero_images/desktop_high_five_1x_jpg.jpg"
         alt="Young women giving a high-five"
         loading="lazy"
       />
     </picture>
-  </div>
+  </div> -->
 </div>
+</section>
 
-
-      <div class="main-fitnes-content">
-        <div class="m-filters">
+      <section class="main-fitnes-content">
+        <div class="container">
           <div class="filters-panel">
 
   <h2 class="filters-title">Exercises<span class="selected-category"></span></h2>
@@ -180,9 +241,49 @@
     <button class="filter-button" data-filter="Equipment">Equipment</button>
   </div>
 </div>
-        </div>
-        <div class="m-sidebar">
-          <div class="sidebar-container">
+          <div class="main-wrap">
+            <div class="m-content">
+              <div class="m-categories">
+                <div class="categories">
+  <div class="categories-wrap">
+    <ul class="categories-list"></ul>
+  </div>
+</div>
+
+
+                <div class="categories-pagination m-pagination">
+                  <div>
+  <div
+    class="pagination bind categories-pagination workouts-pagination"
+    data-current="0"
+    data-total="0"
+  ></div>
+</div>
+
+
+                </div>
+              </div>
+              <div class="m-workouts" style="display: none">
+                <div class="workouts-container">
+                  <div class="workouts-container">
+  <ul class="workouts-container-list"></ul>
+</div>
+
+                </div>
+                <div class="workouts-pagination m-pagination">
+                  <div>
+  <div
+    class="pagination bind categories-pagination workouts-pagination"
+    data-current="0"
+    data-total="0"
+  ></div>
+</div>
+
+
+                </div>
+              </div>
+            </div>
+            <div class="sidebar-container">
   <div class="sidebar-quote-container">
     <svg
       class="sidebar-quote-ranner-svg"
@@ -194,7 +295,7 @@
       <use x="0" y="0" href="/goit-team4-YourEnergy/assets/icons-C2AWWUWW.svg#icon-running"></use>
     </svg>
     <div class="sidebar-quote-wrapper">
-      <h4 class="sidebar-quote-of-day">Quote of the day</h4>
+      <h3 class="sidebar-quote-of-day">Quote of the day</h3>
       <div class="sidebar-quote"></div>
       <div class="sidebar-quote-author"></div>
     </div>
@@ -210,7 +311,7 @@
   </div>
   <picture>
     <source
-      media="(min-width: 1280px)"
+      media="(min-width: 1440px)"
       srcset="/goit-team4-YourEnergy/assets/sidebar-img-desktop@1x-CxeGngm_.jpg 1x, /goit-team4-YourEnergy/assets/sidebar-img-desktop@2x-Bi4mR2ZG.jpg 2x"
     />
     <source
@@ -237,7 +338,7 @@
     </svg>
     <div class="sidebar-sports-wrapper">
       <div class="sidebar-time">110 min</div>
-      <h6 class="sidebar-norm-sport">Daily norm of sports</h6>
+      <p class="sidebar-norm-sport">Daily norm of sports</p>
       <div class="static-info">
         The World Health Organization recommends at least 150 minutes of
         moderate-intensity aerobic physical activity throughout the week for
@@ -251,52 +352,11 @@
   </div>
 </div>
 
-        </div>
-        <div class="m-content">
-          <div class="m-categories">
-            <div class="categories-container">
-              <div class="categories">
-  <div class="categories-wrap">
-    <ul class="categories-list"></ul>
-  </div>
-</div>
-
-            </div>
-            <div class="categories-pagination m-pagination">
-              <div>
-  <div
-    class="pagination bind categories-pagination workouts-pagination"
-    data-current="0"
-    data-total="0"
-  ></div>
-</div>
-
-
-            </div>
-          </div>
-          <div class="m-workouts" style="display: none;">
-            <div class="workouts-container">
-              <div class="workouts-container">
-  <ul class="workouts-container-list"></ul>
-</div>
-
-            </div>
-            <div class="workouts-pagination m-pagination">
-              <div>
-  <div
-    class="pagination bind categories-pagination workouts-pagination"
-    data-current="0"
-    data-total="0"
-  ></div>
-</div>
-
-
-            </div>
           </div>
         </div>
-      </div>
-
-      <footer class="footer">
+      </section>
+    </main>
+    <footer class="footer">
   <div class="footer-container container">
     <div class="footer-content">
       <div class="footer-logo-and-social">
@@ -375,9 +435,7 @@
       </div>
 
       <div class="footer-form">
-        <div>
           <h2>Transforming  your <span class="footer-span">body</span> shape with us</h2>
-        </div>
         <form class="subscribe-form" autocomplete="off">
           <label>
             Subscribe and learn about new exercises!
@@ -395,9 +453,7 @@
     </div>
 
     <div class="bottom">
-      <div class="bottom-p">
-        <p>Your Energy. All rights reserved.</p>
-      </div>
+        <p class="bottom-p">Your Energy. All rights reserved.</p>
       <div class="footer-links-wrapper">
         <ul class="footer-links">
           <li><a class="policy" href="#">Privacy Policy /</a></li>
@@ -409,8 +465,6 @@
 
   </div>
 </footer>
-
-    </div>
 
     <div class="favorites-page hidden">
       <div class="container">
@@ -454,7 +508,7 @@
 </div>
     </div>
 
-   <div class="modal-backdrop is-hidden" data-modal>
+    <div class="modal-backdrop is-hidden" data-modal>
   <div class="modal">
     <button type="button" class="modal-close-btn" data-modal-close>
       <svg class="modal-close-icon" width="24" height="24">
@@ -565,7 +619,7 @@
 </div>
 
 
-  <div id="backdrop" class="backdrop" onclick="closeMenu()">
+    <div id="backdrop" class="backdrop" onclick="closeMenu()">
   <div class="mobile-menu" onclick="menuLayoutClickHandler(event)">
     <div class="btn-menu-wrap">
       <button
@@ -629,6 +683,5 @@
   </div>
 </div>
 
-
-</body>
+  </body>
 </html>
