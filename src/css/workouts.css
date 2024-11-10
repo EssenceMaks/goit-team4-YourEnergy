@@ -180,7 +180,7 @@
 @media screen and (min-width: 1440px) {
   .workouts-container {
     width: 900px;
-    height: 1064px;
+    height: 833px;
   }
 
   .workouts-card {
@@ -196,6 +196,6 @@
   .workouts-container-list {
     margin: 0;
     max-width: 900px;
-    height: 1064px;
+    height: 833px;
   }
 }
