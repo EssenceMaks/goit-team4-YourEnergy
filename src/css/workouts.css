@@ -80,6 +80,10 @@
   line-height: 1.3;
 }
 
+.workout-start-btn:hover, .workout-start-btn:focus {
+
+}
+
 .workout-start-btn svg {
   stroke: var(--black-color);
 }
@@ -184,6 +188,11 @@
   justify-content: center;
   margin-top: 20px;
   width: 100%;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.workouts-pagination li {
+  padding: 8px;
 }
 
 @media screen and (min-width: 1440px) {
