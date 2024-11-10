@@ -3,13 +3,13 @@
 }
 
 .trash-container {
-    fill: white;
-    stroke: #242424;
-    cursor: pointer;
+  fill: white;
+  stroke: #242424;
+  cursor: pointer;
 }
 
-.trash-container:hover, .trash-container:focus {
-  
+.trash-container:hover,
+.trash-container:focus {
 }
 
 .favorites-sidebar-container {
@@ -91,10 +91,10 @@
   padding: 40px 0;
 }
 .favorites-cards {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .favorites-sidebar-quote-author,
@@ -222,7 +222,7 @@
   .favorites-cards {
     flex-direction: row;
     flex-wrap: wrap;
-    gap:  32px 16px;
+    gap: 32px 16px;
     height: 828px;
     align-content: flex-start;
   }
@@ -241,7 +241,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-
   .main-favorites-content {
     padding: 90px 0 63px;
   }
@@ -273,12 +272,10 @@
     min-width: 100%;
   }
 
-
   .favorites-sidebar-quote-image {
     min-height: 225px;
     object-fit: cover;
   }
-
 
   .categories-wrap {
     order: 2;
@@ -311,11 +308,13 @@
     margin-top: 0;
     width: 850px;
     height: 487px;
-    overflow-y: scroll;    
+    overflow-y: scroll;
   }
-  .workouts-card {
+
+  .favorites-cards .workouts-card {
     width: 405px;
   }
+
   .favorites-sidebar-sports-info {
     width: 239px;
     padding-left: 25px;
@@ -342,15 +341,3 @@
     height: 141px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
