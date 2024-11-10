@@ -1,5 +1,3 @@
-
-
 async function getQuote() {
     const today = new Date().toISOString().split('T')[0];
 
@@ -17,9 +15,12 @@ async function getQuote() {
 
     // якщо дата змінилась або цитата&автор відсутні, то запит на бекенд
     try {
+        const { quoteURL } = await import('./api-service.js');
+        
         const response = await fetch(quoteURL());
+
         if (!response.ok) {
-        throw new Error('Failed to fetch quote');
+            throw new Error('Failed to fetch quote');
         }
 
         const data = await response.json();

@@ -128,6 +128,17 @@
     margin-bottom: 32px;
   }
 
+  .filters-panel:has(.search-form:not(.hidden)) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.search-filters:has(.search-form:not(.hidden)){
+  margin-bottom: 32px;
+}
+
   .filters-title {
     font-size: 44px;
     line-height: 1.09;
