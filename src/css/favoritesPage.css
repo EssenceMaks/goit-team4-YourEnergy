@@ -5,6 +5,10 @@
 .trash-container {
     fill: white;
     stroke: #242424;
+    cursor: pointer;
+}
+.trash-container:hover, .trash-container:focus {
+
 }
 .sidebar-container {
   margin: 0;
@@ -81,8 +85,11 @@ picture {
     flex-direction: row;
     flex-wrap: wrap;
     gap:  32px 16px;
-    max-height: 704px;
+    height: 828px;
     align-content: flex-start;
+  }
+  .workouts-pagination {
+    margin-top: 32px;
   }
 }
 @media screen and (min-width: 1440px) {
