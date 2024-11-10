@@ -13,5 +13,4 @@ export const setStartRating = (element, rating) => {
     stars += starMarkup(40);
   }
   element.innerHTML = stars;
-
 };

@@ -1,6 +1,6 @@
-export const starMarkup = (persents) => {
+export const starMarkup = persents => {
   let id = Date.now();
-  return (`<div style="width: 18px; display: flex; align-items: center">
+  return `<div style="width: 18px; display: flex; justify-content: center; align-items: center">
 
   <svg  id="starSVG" width="14" height="14" viewBox="0 0 14 14">
     <path
@@ -17,5 +17,5 @@ export const starMarkup = (persents) => {
     />
   </svg>
 </div>
-`)
-}
+`;
+};

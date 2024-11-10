@@ -1,5 +1,6 @@
 import { capitalizeFirstLetter } from './markup/stringUtils';
 import { removeFromFavorites } from './markup/favoritesUtils';
+import { setStartRating } from './set-star-rating';
 
 export class ModalWindow {
   static instance = null;
@@ -195,6 +196,11 @@ export class ModalWindow {
     const ratingElement = this.backdrop.querySelector('.rating-value');
     if (ratingElement) {
       ratingElement.textContent = rating;
+    }
+
+    const ratingStarsContainer = this.backdrop.querySelector('.rating-stars');
+    if (ratingStarsContainer) {
+      setStartRating(ratingStarsContainer, rating);
     }
   }
 

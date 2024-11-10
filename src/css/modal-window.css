@@ -9,8 +9,8 @@
   width: 100%;
   height: 100%;
   background-color: rgba(4, 4, 4, 0.4);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--anim-duration) var(--anim-timing-function),
+              visibility var(--anim-duration) var(--anim-timing-function);
   overflow-y: scroll;
   z-index: 999;
   display: flex;
@@ -31,10 +31,10 @@
   transform: translateX(-50%);
   width: 335px;
   padding: 40px 20px;
-  color: #fff;
+  color: var(--white-color);
   border-radius: 20px;
   font-family: "DM Sans", sans-serif;
-  background-color: #242424;
+  background-color: var(--black-color);
   box-sizing: border-box;
 }
 
@@ -51,8 +51,8 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--anim-duration) var(--anim-timing-function),
+              background-color var(--anim-duration) var(--anim-timing-function);
 }
 
 .modal-close-btn:hover {
@@ -67,12 +67,12 @@
   width: 24px;
   height: 24px;
   stroke-width: 1.5px;
-  stroke: #f4f4f4;
-  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  stroke: var(--white-color);
+  transition: stroke var(--anim-duration) var(--anim-timing-function);
 }
 
 .modal-close-btn:hover .modal-close-icon {
-  stroke: #f8f8f8;
+  stroke: var(--white-color);
 }
 
 .modal-content {
@@ -120,7 +120,7 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 1;
-  color: #f4f4f4;
+  color: var(--white-color);
 }
 
 .modal-rating {
@@ -135,14 +135,14 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 1.5;
-  color: #f4f4f4;
+  color: var(--white-color);
 }
 
 .rating-stars {
   display: flex;
+  gap: 2px;
   width: 98px;
   height: 18px;
-  background-color: gold;
 }
 
 .modal-parameters {
@@ -171,7 +171,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 1.29;
-  color: #f4f4f4;
+  color: var(--white-color);
 }
 
 .modal-description {
@@ -204,17 +204,17 @@
 .modal-favorites-btn,
 .modal-favorites-btn.is-favorite {
   border: none;
-  color: #242424;
-  background-color: #f4f4f4;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--black-color);
+  background-color: var(--white-color);
+  transition: all var(--anim-duration) var(--anim-timing-function);
 }
 
 .modal-favorites-btn:hover,
 .modal-favorites-btn.is-favorite:hover,
 .modal-favorites-btn:focus,
 .modal-favorites-btn.is-favorite:focus {
-  border: 1px solid #f4f4f4;
-  color: #f4f4f4;
+  border: 1px solid var(--white-color);
+  color: var(--white-color);
   background-color: transparent;
 }
 
@@ -224,44 +224,44 @@
   height: 16px;
   fill: none;
   stroke-width: 1.5px;
-  stroke: #242424;
-  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  stroke: var(--black-color);
+  transition: stroke var(--anim-duration) var(--anim-timing-function);
 }
 
 .modal-favorites-btn:hover .modal-icon-heart,
 .modal-favorites-btn:hover .modal-icon-delete,
 .modal-favorites-btn:focus .modal-icon-heart,
 .modal-favorites-btn:focus .modal-icon-delete {
-  stroke: #f4f4f4;
-  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  stroke: var(--white-color);
+  transition: stroke var(--anim-duration) var(--anim-timing-function);
 }
 
 .modal-favorites-btn.is-favorite .modal-icon-heart,
 .modal-favorites-btn.is-favorite .modal-icon-delete {
-  stroke: #242424;
-  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  stroke: var(--black-color);
+  transition: stroke var(--anim-duration) var(--anim-timing-function);
 }
 
 .modal-favorites-btn.is-favorite:hover .modal-icon-heart,
 .modal-favorites-btn.is-favorite:hover .modal-icon-delete,
 .modal-favorites-btn.is-favorite:focus .modal-icon-heart,
 .modal-favorites-btn.is-favorite:focus .modal-icon-delete {
-  stroke: #f4f4f4;
-  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  stroke: var(--white-color);
+  transition: stroke var(--anim-duration) var(--anim-timing-function);
 }
 
 .modal-rating-btn {
-  border: 1px solid #f4f4f4;
-  color: #f4f4f4;
+  border: 1px solid var(--white-color);
+  color: var(--white-color);
   background-color: transparent;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--anim-duration) var(--anim-timing-function);
 }
 
 .modal-rating-btn:hover,
 .modal-rating-btn:focus {
   border: none;
-  color: #242424;
-  background-color: #f4f4f4;
+  color: var(--black-color);
+  background-color: var(--white-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -381,8 +381,8 @@
   padding: 40px 20px;
   opacity: 1;
   visibility: visible;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--anim-duration) var(--anim-timing-function),
+              visibility var(--anim-duration) var(--anim-timing-function);
 }
 
 .rating-form {
@@ -431,14 +431,14 @@
   width: 100%;
   height: 42px;
   padding: 12px 14px;
-  border: 1px solid #f4f4f4;
+  border: 1px solid var(--white-color);
   border-radius: 30px;
   background-color: transparent;
   font-size: 14px;
   line-height: 1.29;
   font-weight: 400;
   color: rgba(244, 244, 244, 0.6);
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color var(--anim-duration) var(--anim-timing-function);
 }
 
 .rating-form-textarea {
@@ -450,7 +450,7 @@
 .rating-form-input:focus,
 .rating-form-textarea:focus {
   outline: none;
-  border-color: #f4f4f4;
+  border-color: var(--white-color);
 }
 
 .rating-form-input::placeholder,
@@ -460,17 +460,17 @@
 
 .rating-form-btn {
   width: 100%;
-  background-color: #f4f4f4;
-  color: #242424;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--white-color);
+  color: var(--black-color);
+  transition: background-color var(--anim-duration) var(--anim-timing-function),
+              color var(--anim-duration) var(--anim-timing-function);
 }
 
 .rating-form-btn:hover,
 .rating-form-btn:focus {
   background-color: transparent;
-  color: #f4f4f4;
-  border: 1px solid #f4f4f4;
+  color: var(--white-color);
+  border: 1px solid var(--white-color);
 }
 
 @media screen and (min-width: 768px) {
