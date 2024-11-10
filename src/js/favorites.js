@@ -1,7 +1,8 @@
 import axios from 'axios';
-import { exerciseInfoRequest } from './api-service';
+import { exerciseInfoRequest, exerciseUrl } from './api-service';
 import createWorkoutsMarkup from './markup/workoutsMarkup';
 import { generatePages } from './pagination';
+import { ModalWindow } from './modal-window';
 
 const currentPath = window.location.pathname;
 
@@ -50,7 +51,7 @@ const categoriesPagination = document.querySelector('.favorites-pagination');
 
 let getFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
 let dataList = [];
-let currentPage = 0; 
+let currentPage = 0;
 
 const fetchAndRenderFavorites = async () => {
   if (!getFavorites || getFavorites.length === 0) {
@@ -92,6 +93,7 @@ const fetchAndRenderFavorites = async () => {
       workoutMarkup = createWorkoutsMarkup(dataList);
       favoritesText.style.display = 'none';
       favoritesCards.innerHTML = workoutMarkup;
+      changeTrash();
       categoriesPagination.innerHTML = '';
     } else {
       workoutMarkup = createWorkoutsMarkup(
@@ -116,10 +118,45 @@ const fetchAndRenderFavorites = async () => {
       }
     }
 
-    const workoutStartBtn = document.querySelectorAll('.workout-start-btn');
-    workoutMarkup.addEventListener('click', )
+    const startButtons = document.querySelectorAll('.workout-start-btn');
+    startButtons.forEach(button => {
+      button.addEventListener('click', async e => {
+        e.preventDefault();
+        const workoutCard = button.closest('.workouts-card');
+        const exerciseId = workoutCard.dataset.id;
 
-    changeTrash();
+        try {
+          const response = await fetch(`${exerciseUrl()}/${exerciseId}`);
+          if (!response.ok) throw new Error('Failed to fetch exercise details');
+
+          const exerciseData = await response.json();
+
+          if (!window.modalWindow) {
+            window.modalWindow = new ModalWindow();
+          }
+          window.modalWindow.open(exerciseData);
+
+
+          // --------------якщо відкрили модалку, видалили картку, оновити це в розмітці---------
+
+          // const closeBTtn = document.querySelector('.modal-close-btn');
+          // closeBTtn.addEventListener('click', () => {
+          //   const newFavorites =
+          //     JSON.parse(localStorage.getItem('favorites')) || [];
+          //   if (JSON.stringify(getFavorites) !== JSON.stringify(newFavorites)) {
+          //     getFavorites = newFavorites;
+          //     fetchAndRenderFavorites();
+          //   }
+          // })
+
+
+        } catch (error) {
+          console.error('Error opening modal:', error);
+        }
+      });
+    });
+
+    
   } catch (error) {
     console.error(error);
   }
