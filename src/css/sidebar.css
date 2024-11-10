@@ -68,6 +68,9 @@
 .static-info {
   color: rgba(36, 36, 36, 0.6);
 }
+.sidebar-norm-sport {
+  margin-bottom: 20px;
+}
 
 .sidebar-quote-container {
   background: var(--black-color);
@@ -120,7 +123,7 @@
   -webkit-line-clamp: 5;
 }
 
-@media screen and (min-width: 335px) {
+@media screen and (min-width: 375px) {
   .sidebar-container {
     width: 335px;
   }
@@ -186,7 +189,6 @@
 
   div.static-info {
     display: block;
-    padding-top: 20px;
   }
 
   .categories-wrap {

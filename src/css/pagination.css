@@ -7,13 +7,15 @@
   margin-top: auto;
   padding: 20px 0;
   width: 100%;
+  list-style: none;
 }
 
-.pagination p {
+.pagination li {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  
 }
 
 .selected {

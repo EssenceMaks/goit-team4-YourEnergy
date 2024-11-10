@@ -1,20 +1,35 @@
 <div class="filters-panel">
-
   <h2 class="filters-title">Exercises</h2>
   <div class="search-filters">
     <form class="search-form hidden" id="search-form">
-        <input type="text" class="search-input" id="search-input" placeholder="Search" aria-label="Search exercises">
-        <button type="submit" class="search-button" aria-label="Start search">
-          <svg width="18" height="18">
-            <use href="../img/icons.svg#icon-search"></use>
-          </svg>
-        </button>
+      <input
+        type="text"
+        class="search-input"
+        id="search-input"
+        placeholder="Search"
+        aria-label="Search exercises"
+      />
+      <button type="submit" class="search-button" aria-label="Start search">
+        <svg width="18" height="18">
+          <use href="../img/icons.svg#icon-search"></use>
+        </svg>
+      </button>
     </form>
 
-    <div class="filters-buttons">
-      <button class="filter-button active" data-filter="Muscles">Muscles</button>
-      <button class="filter-button" data-filter="Body-parts">Body parts</button>
-      <button class="filter-button" data-filter="Equipment">Equipment</button>
-    </div>
+    <ul class="filters-buttons">
+      <li>
+        <button class="filter-button active" data-filter="Muscles">
+          Muscles
+        </button>
+      </li>
+      <li>
+        <button class="filter-button" data-filter="Body-parts">
+          Body parts
+        </button>
+      </li>
+      <li>
+        <button class="filter-button" data-filter="Equipment">Equipment</button>
+      </li>
+    </ul>
   </div>
 </div>
