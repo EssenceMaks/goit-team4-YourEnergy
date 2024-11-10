@@ -1,4 +1,4 @@
-import { quoteURL } from './api-service';
+
 
 async function getQuote() {
     const today = new Date().toISOString().split('T')[0];
