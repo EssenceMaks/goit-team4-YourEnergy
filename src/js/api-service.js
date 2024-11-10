@@ -36,7 +36,7 @@ export const subscriptionRequest = () => {
 }
 
 export const exerciseInfoRequest = (id) => {
-  return `${exerciseUrl()}/exercises/${id}`
+  return `${exerciseUrl()}/${id}`
 }
 
 export const addRatingRequest = (id) => {
