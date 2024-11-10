@@ -72,7 +72,6 @@ export class ModalWindowRating {
       this.backdrop.classList.add('is-hidden');
       this.ratingBackdrop.classList.remove('is-hidden');
       this.updateRatingDisplay('0.0');
-      this.lastSelectedRating = null; // Скидаємо збережене значення рейтингу
 
       // Скидаємо вибір радіокнопок
       const radioButtons = document.querySelectorAll('.rating-form-radio');
