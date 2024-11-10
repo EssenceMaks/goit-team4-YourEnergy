@@ -3,6 +3,7 @@ import renderWorkoutsByCategory from './workouts';
 import { getCategories } from './api-requests';
 import { generatePages } from './pagination';
 import { updateHeaderTitle } from './search-filters.js';
+import { showSearchForm } from './search-filters.js';
 
 let categoriesList = document.querySelector('.categories-list');
 let workoutsContainer = document.querySelector('.workouts-container');
@@ -94,8 +95,11 @@ function openCategory(e) {
     const categoryItem = e.target.closest('.categories-item');
     if (!categoryItem) return;
 
-    const categoryName = encodeURIComponent(categoryItem.dataset.name);
-    updateHeaderTitle(categoryName);
+    showSearchForm(true);
+
+    // const categoryName = encodeURIComponent(categoryItem.dataset.name);
+    const categoryName = categoryItem.dataset.name;
+    updateHeaderTitle(categoryItem.dataset.name);
     const categoryFilter = categoryItem.dataset.filter;
     console.log(categoryName)
 
