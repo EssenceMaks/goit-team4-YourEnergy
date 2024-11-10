@@ -17,6 +17,14 @@
 
 }
 
+.selected-category {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: rgba(36, 36, 36, 0.5);
+}
+
 /* Стилі для пошукового рядка */
 
 .search-form .hidden {
@@ -32,25 +40,41 @@
     max-width: 335px;
 }
 
+.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  max-width: 335px;
+
+}
+
 .search-input {
     flex: 1;
     padding: 12px 208px 12px 14px;
     border: 1px solid #242424;
     border-radius: 30px;
     width: 100%;
-    height: 20px;
+    height: 44px;
     font-size: 14px;
     line-height: 1.43;
     color: #242424;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    background-color: transparent;
 }
 
 .search-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
+  position: absolute;
+  right: 12px;
+  top: 13px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .filters-buttons {
@@ -119,6 +143,14 @@
     margin-bottom: 32px;
   }
 
+    .selected-category {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 1.33333;
+      letter-spacing: -0.02em;
+      color: rgba(36, 36, 36, 0.5);
+    }
+
   .filters-buttons {
     flex-basis: 100%;
     margin-bottom: 32px;
@@ -132,9 +164,16 @@
     .search-form.visible {
       max-width: 335px;
     }
+    .search-form {
+    max-width: 273px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+
 
     .search-input {
-      height: 20px;
+      height: 48px;
       margin-top: 0;
       margin-bottom: 32px;
     }
@@ -180,9 +219,27 @@
     margin-bottom: 32px;
   }
 
+  .selected-category {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.33333;
+    letter-spacing: -0.02em;
+    color: rgba(36, 36, 36, 0.5);
+    }
+
+
   .search-form {
     max-width: 400px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
   }
+
+    .search-input {
+      height: 48px;
+      margin-top: 0;
+      margin-bottom: 32px;
+    }
 
   .filters-buttons {
     gap: 1rem;
