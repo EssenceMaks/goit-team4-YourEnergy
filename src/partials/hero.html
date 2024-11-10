@@ -4,7 +4,7 @@
       <div class="hero__title-wrapper">
         <img
           class="hero__sun-icon"
-          src="./img/hero_images/sun.png"
+          src="/img/hero_images/sun.png"
           alt="sun icon"
           loading="lazy"
         />
@@ -23,48 +23,41 @@
       <picture class="hero-small-photo hidden-photo">
         <source
           media="(min-width: 1440px) and (min-resolution: 2dppx)"
-          srcset="./img/hero_images/image_desktop_2x_jpg.jpg 2x"
+          srcset="./img/hero_images/image_small_desktop_png@2x.png 2x"
         />
         <source
           media="(min-width: 1440px)"
-          srcset="./img/hero_images/image_desktop_1x_jpg.jpg"
+          srcset="./img/hero_images/image_small_desktop_png@1x.png"
         />
         <img
           class="hero-photo-small"
-          src="./img/hero_images/image_desktop_1x_jpg.jpg"
+          src="./img/hero_images/image_small_desktop_png@1x.png"
           alt="Two sportswomen against the backdrop of nature"
         />
       </picture>
       <picture>
         <source
-          srcset="
-            /img/hero_images/image_mobile_1x_webp.webp 1x,
-            /img/hero_images/image_mobile_2x_webp.webp 2x
-          "
-          type="image/webp"
-          media="(max-width: 767px)"
-        />
-
-        <source
-          srcset="
-            /img/hero_images/image_tablet_1x_webp.webp 1x,
-            /img/hero_images/image_tablet_2x_webp.webp 2x
-          "
-          type="image/webp"
-          media="(min-width: 768px)"
-        />
-        <source
-          srcset="
-            /img/hero_images/desktop_high_five_1x_jpg.jpg 1x,
-            /img/hero_images/desktop_high_five_2x_jpg.jpg 2x
-          "
-          type="image/jpeg"
           media="(min-width: 1440px)"
+          srcset="
+            ./img/hero_images/hero_desktop_png@1x.png 1x,
+            ./img/hero_images/hero_desktop_png@2x.png 2x
+          "
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="
+            ./img/hero_images/hero_tablet_png@1x.png 1x,
+            ./img/hero_images/hero_tablet_png@2x.png 2x
+          "
         />
 
         <img
           class="hero__image"
-          src="/img/hero_images/image_mobile_1x_jpg.jpg"
+          srcset="
+            ./img/hero_images/hero_mobile_png@1x.png 1x,
+            ./img/hero_images/hero_mobile_png@2x.png 2x
+          "
+          src="./img/hero_images/hero_mobile_png@1x.png"
           alt="Young women giving a high-five"
           loading="lazy"
         />
@@ -75,31 +68,6 @@
         <p class="hero__tag">#Workout</p>
         <p class="hero__tag">#Diet</p>
       </div>
-    </div>
-
-    <div class="hero__wide-image">
-      <picture>
-        <source
-          srcset="
-            /img/hero_images/desktop_high_five_1x_webp.webp 1x,
-            /img/hero_images/desktop_high_five_2x_webp.webp 2x
-          "
-          type="image/webp"
-        />
-        <source
-          srcset="
-            /img/hero_images/desktop_high_five_1x_jpg.jpg 1x,
-            /img/hero_images/desktop_high_five_2x_jpg.jpg 2x
-          "
-          type="image/jpeg"
-        />
-        <img
-          class="hero__image--wide"
-          src="/img/hero_images/desktop_high_five_1x_jpg.jpg"
-          alt="Young women giving a high-five"
-          loading="lazy"
-        />
-      </picture>
     </div>
   </div>
 </section>
