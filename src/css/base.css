@@ -52,6 +52,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-width: calc(100vw - 28px);
   background-color: var(--white-color);
   margin: 0;
 }
