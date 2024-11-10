@@ -5,16 +5,16 @@
     <link rel="icon" type="image/svg+xml" href="/goit-team4-YourEnergy/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team4 Your Energy</title>
-    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-Cw5eTi_O.js"></script>
+    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-B2Rov7N3.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/vendor-CNNbG8jS.js">
-    <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/favorites-Cmg6Y22Z.js">
-    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-n2PmSyyz.css">
+    <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/favorites-B6o4zNnW.js">
+    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-C5nc7mEW.css">
   </head>
   <body>
     <header class="header">
   <div class="container">
     <nav class="nav">
-      <a class="logo" href="/" rel="noopener noreferrer" aria-label="YOUR ENERGY">
+      <a class="logo" href="./index.html" rel="noopener noreferrer" aria-label="YOUR ENERGY">
         <svg width="132" height="24">
           <use href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#logo"></use>
         </svg>
@@ -116,12 +116,12 @@
           loading="lazy"
         />
       </picture>
-      <div class="hero__tags">
-        <p class="hero__tag">#Sport</p>
-        <p class="hero__tag">#Healthy</p>
-        <p class="hero__tag">#Workout</p>
-        <p class="hero__tag">#Diet</p>
-      </div>
+      <ul class="hero__tags">
+        <li class="hero__tag">#Sport</li>
+        <li class="hero__tag">#Healthy</li>
+        <li class="hero__tag">#Workout</li>
+        <li class="hero__tag">#Diet</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -129,42 +129,54 @@
       <section class="main-fitnes-content">
         <div class="container">
           <div class="filters-panel">
-
   <h2 class="filters-title">Exercises</h2>
   <div class="search-filters">
     <form class="search-form hidden" id="search-form">
-        <input type="text" class="search-input" id="search-input" placeholder="Search" aria-label="Search exercises">
-        <button type="submit" class="search-button" aria-label="Start search">
-          <svg width="18" height="18">
-            <use href="../img/icons.svg#icon-search"></use>
-          </svg>
-        </button>
+      <input
+        type="text"
+        class="search-input"
+        id="search-input"
+        placeholder="Search"
+        aria-label="Search exercises"
+      />
+      <button type="submit" class="search-button" aria-label="Start search">
+        <svg width="18" height="18">
+          <use href="../img/icons.svg#icon-search"></use>
+        </svg>
+      </button>
     </form>
 
-    <div class="filters-buttons">
-      <button class="filter-button active" data-filter="Muscles">Muscles</button>
-      <button class="filter-button" data-filter="Body-parts">Body parts</button>
-      <button class="filter-button" data-filter="Equipment">Equipment</button>
-    </div>
+    <ul class="filters-buttons">
+      <li>
+        <button class="filter-button active" data-filter="Muscles">
+          Muscles
+        </button>
+      </li>
+      <li>
+        <button class="filter-button" data-filter="Body-parts">
+          Body parts
+        </button>
+      </li>
+      <li>
+        <button class="filter-button" data-filter="Equipment">Equipment</button>
+      </li>
+    </ul>
   </div>
 </div>
+
           <div class="main-wrap">
             <div class="m-content">
               <div class="m-categories">
-                <div class="categories">
-  <div class="categories-wrap">
-    <ul class="categories-list"></ul>
-  </div>
-</div>
+                    <ul class="categories-list"></ul>
 
 
                 <div class="categories-pagination m-pagination">
                   <div class="workouts-pagination favorites-pagination">
-  <div
+  <ul
     class="pagination bind categories-pagination workouts-pagination"
     data-current="0"
     data-total="0"
-  ></div>
+  ></ul>
 </div>
 
 
@@ -180,11 +192,11 @@
                 <!-- </div> -->
                 <div class="workouts-pagination m-pagination">
                   <div class="workouts-pagination favorites-pagination">
-  <div
+  <ul
     class="pagination bind categories-pagination workouts-pagination"
     data-current="0"
     data-total="0"
-  ></div>
+  ></ul>
 </div>
 
 
@@ -559,10 +571,10 @@
     </div>
     <ul class="menu-items">
       <li class="menu-item" onclick="closeMenu()">
-        <a href="/">Home</a>
+        <a href="./index.html">Home</a>
       </li>
       <li class="menu-item" onclick="closeMenu()">
-        <a href="/favorites">Favorites</a>
+        <a href="./favorites.html">Favorites</a>
       </li>
     </ul>
 
