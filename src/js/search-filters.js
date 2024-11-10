@@ -2,7 +2,8 @@
 import renderWorkoutsByCategory from './workouts';
 import { getCategories } from './api-requests';
 import createCategoriesMarkup from './markup/categoriesMarkup';
-import {loadCategories} from './categories'
+import {loadCategories} from './categories';
+import {currentCategoryName} from './categories';
 
 // Ініціалізація основних змінних
 let allCategories = [];
@@ -28,6 +29,8 @@ filterButtons.forEach(button => {
       showSearchForm(false);
       const workoutsSection = document.querySelector('.m-workouts');
       workoutsSection.style.display = 'none';
+      const categoriesContainer = document.querySelector('.m-categories');
+      categoriesContainer.style.display = 'flex';
     });
 });
 
@@ -35,14 +38,12 @@ filterButtons.forEach(button => {
 searchForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const searchKeyword = searchInput.value.trim();
-  // const category = selectedCategoryElement.textContent.trim().split(' / ')[1]; // Беремо поточну категорію
   try {
-    //закоментувала бо робить ще раз запит і ламає картки
-    //const exercises = await renderWorkoutsByCategory(category, searchKeyword);
-    //displayExercises(exercises); // Виклик функції для відображення знайдених вправ
+    renderWorkoutsByCategory('', currentCategoryName, '', searchKeyword, 1, 10);
   } catch (error) {
     console.error('Error loading exercises:', error);
   }
+  searchInput.value = '';
 });
 
 // Функція для показу або приховування пошукової форми
