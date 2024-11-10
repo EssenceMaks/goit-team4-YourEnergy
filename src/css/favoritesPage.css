@@ -1,6 +1,11 @@
 .main-favorites-content {
   padding: 80px 0 40px;
 }
+
+.trash-container {
+    fill: white;
+    stroke: #242424;
+}
 .sidebar-container {
   margin: 0;
   padding: 20px 0 0;
@@ -21,7 +26,6 @@ picture {
   display: none;
 }
 .favorites-page-wrap {
-  
 }
 .favorites-page-text {
   font-family: 'DM Sans', sans-serif;
@@ -33,6 +37,12 @@ picture {
   width: 318px;
   margin: 0 auto;
   padding: 40px 0;
+}
+.favorites-cards {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 @media screen and (min-width: 768px) {
   .favorites-title {
@@ -66,7 +76,13 @@ picture {
     padding: 132px 0;
   }
   .favorites-page-wrap {
-    
+  }
+  .favorites-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:  32px 16px;
+    max-height: 704px;
+    align-content: flex-start;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -85,6 +101,7 @@ picture {
     width: 494px;
     gap: 16px;
     flex-direction: row;
+    align-content: flex-start;
   }
   picture,
   .sidebar-quote-image {
@@ -110,5 +127,13 @@ picture {
   }
   .favorites-page-wrap {
     width: 850px;
+  }
+  .favorites-cards {
+    margin-top: 0;
+    height: 487px;
+    
+  }
+  .workouts-card {
+    width: 405px;
   }
 }

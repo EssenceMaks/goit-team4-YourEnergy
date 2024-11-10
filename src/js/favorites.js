@@ -74,13 +74,23 @@ const fetchAndRenderFavorites = async () => {
     trashContainer.forEach((trash) => {
       trash.classList.remove('hide');
     })
+
+    trashContainer.addEventListener('click', deleteFromFavorites);
+    
     
 
-console.log(rating)
+    
+
 
   } catch (error) {
     console.error;
   }
 };
+
+
+function deleteFromFavorites (e) {
+  console.log(e.target)
+}
+
 
 fetchAndRenderFavorites();
