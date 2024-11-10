@@ -238,27 +238,8 @@ margin-bottom: 40px;
 
   }
   
-
 }
 
-@media screen and (min-width: 1440px) {
-  .footer-content{
-    display: flex;
-    flex-direction: row;
-    gap: 115px;
-  }
-
-  .footer-form{
-    display: flex;
-    gap: 135px;
-  }
-
-
-  .footer-links-wrapper{
-    justify-content: unset;
-    gap: 380px;
-  }
-}
 
 @media screen and (min-width: 1440px){
   
