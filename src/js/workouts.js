@@ -47,11 +47,20 @@ async function renderWorkoutsByCategory(
     }
 
     const workoutsSection = document.querySelector('.workouts-container');
+    const workoutsContainerList = document.querySelector(".workouts-container-list");
+    const workoutsError = document.querySelector(".workouts-error");
     if (workoutsSection) {
       workoutsSection.style.display = 'flex';
+      workoutsContainerList.style.display = 'flex';
+      workoutsError.style.display = 'none';
     }
 
-    if (data.totalPages && data.totalPages > 0) {
+    if (data.results.length === 0) {
+      workoutsContainerList.style.display = 'none';
+      workoutsError.style.display = 'block';
+      workoutsPagination.style.display = 'none';
+    } else if (data.results.length > 0 && data.totalPages && data.totalPages > 0) {
+      workoutsPagination.style.display = 'flex';
       setupPagination(data.totalPages, page);
     }
 

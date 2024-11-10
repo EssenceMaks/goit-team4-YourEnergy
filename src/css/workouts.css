@@ -9,12 +9,11 @@
 }
 
 .workouts-container-list {
-  display: grid;
-  grid-template-columns: 1fr;
   gap: 20px;
   margin: 20px auto;
   width: 100%;
-  max-width: 335px;
+  display: flex;
+  flex-direction: column;
 }
 
 .workouts-card {
@@ -23,6 +22,7 @@
   padding: 16px;
   position: relative;
   max-height: 152px;
+  max-width: 335px;
 }
 
 .card-header {
@@ -135,11 +135,28 @@
   display: none;
 }
 
+.workouts-card .title.text-overflow {
+  max-width: 250px;
+}
+
+.workouts-error {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 768px) {
   .workouts-container-list {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 705px;
+    max-width: 704px;
     gap: 32px 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: start;
   }
 
   .workouts-container {
@@ -149,13 +166,17 @@
   .card-content {
     margin-bottom: 8px;
   }
+
+  .workouts-card {
+    max-width: none;
+    width: 344px;
+  }
 }
 
 .text-overflow {
+  white-space: nowrap;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
 }
 
 .workouts-pagination {
@@ -165,12 +186,25 @@
   width: 100%;
 }
 
-@media screen and (min-width: 1280px) {
-  .workouts-container-list {
-    max-width: 900px;
+@media screen and (min-width: 1440px) {
+  .workouts-container {
+    width: 900px;
+    height: 833px;
   }
 
-  .workouts-container {
-    padding-left: 6px;
+  .workouts-card {
+    border-radius: 15px;
+    background: white;
+    padding: 16px;
+    position: relative;
+    max-height: 152px;
+    width: 442px;
+    max-width: none;
+  }
+
+  .workouts-container-list {
+    margin: 0;
+    max-width: 900px;
+    height: 833px;
   }
 }

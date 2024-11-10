@@ -1,16 +1,58 @@
-const paginations = document.querySelectorAll('.pagination');
+const paginations = document.querySelectorAll('.pagination-test');
 
-export const generatePages = (totalPages, currentPage) =>{
-  let pagesFragment = new DocumentFragment();
-  for(let i = 0; i < totalPages; i++) {
-    let p = document.createElement('p');
-    p.setAttribute('data-index', i);
-    p.innerHTML = i + 1;
-    p.classList.add('pagination-page');
-    if (i===currentPage){p.classList.add('selected');}
-    pagesFragment.appendChild(p);
+const createPagination = (paginationContainer, currentPage, totalPages, maxVisiblePages = 5) => {
+
+  paginationContainer.innerHTML = "";
+
+  function createPageButton(page, isActive = false) {
+    const button = document.createElement("button");
+    button.innerText = page;
+    button.className = isActive ? "active" : "";
+    button.addEventListener("click", () => updatePagination(paginationContainer, page));
+    return button;
   }
-  return pagesFragment;
+
+  const pages = [];
+  const halfVisible = Math.floor(maxVisiblePages / 2);
+
+  const startPage = Math.max(2, currentPage - halfVisible);
+  const endPage = Math.min(totalPages - 1, currentPage + halfVisible);
+
+  pages.push(createPageButton(1, currentPage === 1));
+
+  if (startPage > 2) {
+    const dots = document.createElement("span");
+    dots.innerText = "...";
+    dots.className = "dots";
+    pages.push(dots);
+  }
+
+
+  for (let i = startPage; i <= endPage; i++) {
+    pages.push(createPageButton(i, i === currentPage));
+  }
+
+
+  if (endPage < totalPages - 1) {
+    const dots = document.createElement("span");
+    dots.innerText = "...";
+    dots.className = "dots";
+    pages.push(dots);
+  }
+
+
+  if (totalPages > 1) {
+    pages.push(createPageButton(totalPages, currentPage === totalPages));
+  }
+
+
+  pages.forEach(pageElement => paginationContainer.appendChild(pageElement));
+}
+
+const updatePagination = (paginationContainer, selectedPage) => {
+  paginationContainer.setAttribute('data-current', selectedPage);
+  createPagination(paginationContainer, selectedPage, parseInt(paginationContainer.getAttribute('data-total')));
+  console.log("Selected page:", selectedPage);
 }
 
 paginations.forEach(pagination => {
@@ -20,26 +62,13 @@ paginations.forEach(pagination => {
     const totalPages = parseInt(pagination.getAttribute('data-total'));
     const currentPage = parseInt(pagination.getAttribute('data-current'));
 
-    pagination.appendChild(generatePages(totalPages, currentPage));
-    pagination.addEventListener('click', async (e) => {
-
-      if (e.target.classList.contains('pagination-page')){
-        const pages = pagination.querySelectorAll('.pagination-page');
-        pages.forEach(page => {
-            page.classList.remove('selected');
-        })
-        e.target.classList.add('selected');
-        e.target.parentElement.setAttribute('data-current', e.target.getAttribute('data-index'));
-      }
-
-    })
+    updatePagination(pagination,currentPage,totalPages);
 
     const observer = new MutationObserver((mutationsList) => {
       for (let mutation of mutationsList) {
         if (mutation.type === 'attributes' && mutation.attributeName === 'total-pages') {
           const newValue = pagination.getAttribute('total-pages');
-          pagination.innerHTML ='';
-          pagination.appendChild(generatePages(newValue, parseInt(pagination.getAttribute('current-page'))));
+          createPagination(pagination, parseInt(pagination.getAttribute('current-page')),newValue);
 
         }
       }
@@ -49,3 +78,4 @@ paginations.forEach(pagination => {
 
   }
 })
+

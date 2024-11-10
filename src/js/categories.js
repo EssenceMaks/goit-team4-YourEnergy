@@ -3,10 +3,12 @@ import renderWorkoutsByCategory from './workouts';
 import { getCategories } from './api-requests';
 import { generatePages } from './pagination';
 import { updateHeaderTitle } from './search-filters.js';
+import { showSearchForm } from './search-filters.js';
 
 let categoriesList = document.querySelector('.categories-list');
 let workoutsContainer = document.querySelector('.workouts-container');
 const categoriesPagination = document.querySelector('.m-categories .categories-pagination');
+export let currentCategoryName = "";
 
 export async function loadCategories(currentCategoryName) {
   const categoriesContainer = document.querySelector('.m-categories');
@@ -94,8 +96,12 @@ function openCategory(e) {
     const categoryItem = e.target.closest('.categories-item');
     if (!categoryItem) return;
 
+    showSearchForm(true);
+
     const categoryName = encodeURIComponent(categoryItem.dataset.name);
-    updateHeaderTitle(categoryName);
+    currentCategoryName = categoryName;
+    
+    updateHeaderTitle(categoryItem.dataset.name);
     const categoryFilter = categoryItem.dataset.filter;
     console.log(categoryName)
 

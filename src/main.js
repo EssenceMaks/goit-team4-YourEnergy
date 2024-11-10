@@ -14,14 +14,14 @@ import './js/modal-window-rating.js';
 
 // Если мы на странице task-management, загружаем дополнительные стили
 if (window.location.pathname.includes('task-management')) {
-  import('./css/task-manager.css');
+  import('./css/_task-manager.css');
 }
 
 // Функция для инициализации TaskManager
 async function initTaskManager() {
   if (!window.taskManager) {
     try {
-      const TaskManagerModule = await import('./js/task-manager.js');
+      const TaskManagerModule = await import('./js/_task-manager.js');
       const TaskManager = TaskManagerModule.default;
       window.taskManager = new TaskManager();
       await new Promise(resolve => setTimeout(resolve, 200));
