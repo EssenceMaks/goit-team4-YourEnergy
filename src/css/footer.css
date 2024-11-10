@@ -230,6 +230,8 @@ margin-bottom: 40px;
   }
   .bottom-p {
     margin-bottom: 0;
+    white-space: nowrap;
+
   }
   
 
