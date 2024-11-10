@@ -25,7 +25,9 @@ filterButtons.forEach(button => {
         filterButtons.forEach(btn => btn.classList.remove('active'));
         e.target.classList.add('active');
       updateHeaderTitle(); //clear breadcrumbs
-      toggleSearchForm(false);
+      showSearchForm(false);
+      const workoutsSection = document.querySelector('.m-workouts');
+      workoutsSection.style.display = 'none';
     });
 });
 
@@ -33,7 +35,7 @@ filterButtons.forEach(button => {
 searchForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const searchKeyword = searchInput.value.trim();
-  const category = selectedCategoryElement.textContent.trim().split(' / ')[1]; // Беремо поточну категорію
+  // const category = selectedCategoryElement.textContent.trim().split(' / ')[1]; // Беремо поточну категорію
   try {
     //закоментувала бо робить ще раз запит і ламає картки
     //const exercises = await renderWorkoutsByCategory(category, searchKeyword);
@@ -44,12 +46,8 @@ searchForm?.addEventListener('submit', async (e) => {
 });
 
 // Функція для показу або приховування пошукової форми
-function toggleSearchForm(isCategory) {
-  if (isCategory) {
-    searchForm.style.display = 'none'; // Показуємо форму пошуку
-  } else {
-    searchForm.style.display = 'block'; // Приховуємо форму пошуку
-  }
+export function showSearchForm(isShow) {
+  searchForm.style.display = isShow ? 'block' : 'none';
 }
 
 
@@ -57,15 +55,15 @@ function toggleSearchForm(isCategory) {
 function openCategory(e) {
   const categoryName = e.currentTarget.dataset.name;
   updateHeaderTitle(categoryName);
-  selectedCategoryElement.textContent = ` / <span class="breadcrumbs">${categoryName}</span>`;
   categoriesList.style.display = 'none';
-  toggleSearchForm(true);
+  showSearchForm(true);
   loadExercises(categoryName);
 }
 
 // Функція для оновлення заголовка з обраним фільтром і категорією
-export function updateHeaderTitle(categoryName = '') {
-  selectedCategoryElement.textContent = categoryName ? ` / ${categoryName}` : '';
+export function updateHeaderTitle(categoryName = false) {
+  // selectedCategoryElement.textContent = categoryName ? ` / ${categoryName}` : '';
+  selectedCategoryElement.innerHTML = categoryName ? ' / ' + '<span class="breadcrumbs">' + categoryName + '</span>' : '';
 }
 
 function attachCategoryListeners() {
@@ -80,7 +78,7 @@ function attachCategoryListeners() {
 document.addEventListener('DOMContentLoaded', async () => {
   await loadCategories(activeFilter);
   attachCategoryListeners(); // Додаємо обробники подій для існуючих категорій
-  toggleSearchForm(false); // Приховуємо форму пошуку
+  showSearchForm(false); // Приховуємо форму пошуку
 });
 
 // Функція для завантаження вправ на основі категорії та ключового слова
