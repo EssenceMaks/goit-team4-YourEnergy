@@ -51,13 +51,9 @@ button {
 body {
   display: flex;
   flex-direction: column;
-  min-width: 100vw;
-  min-height: 100vh;
   background-color: var(--white-color);
   margin: 0;
 }
-
-
 
 .m-categories,
 .m-workouts {
@@ -77,7 +73,6 @@ body {
   flex-direction: column;
 }
 
-
 .m-pagination {
   margin-top: auto;
   width: 100%;
@@ -92,7 +87,6 @@ body {
   width: 100%;
   cursor: pointer;
 }
-
 
 main:has(.back-link) {
   text-align: center;
