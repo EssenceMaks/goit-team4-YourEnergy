@@ -39,7 +39,7 @@
   letter-spacing: -0.02em;
   color: #242424;
   text-align: left;
-  }
+}
 
 .hero__title--italic {
   font-style: italic;
@@ -134,9 +134,7 @@
   .hero__image {
     width: 335px;
   }
-
-    
-  }
+}
 
 @media screen and (min-width: 768px) and (max-width: 1440px) {
   .hero {
@@ -194,7 +192,6 @@
   .hero__wide-image {
     display: none;
   }
-  
 }
 @media screen and (min-width: 1440px) {
   .hero {
@@ -275,10 +272,10 @@
     display: block;
   }
 
-    .hero__wide-image {
-      border-radius: 60px;
-      display: block;
-    }
+  .hero__wide-image {
+    border-radius: 60px;
+    display: block;
+  }
   /* Явно показываем изображения на десктопе */
   .hero__wide-image img {
     display: block;
@@ -330,8 +327,4 @@
     flex-direction: row-reverse;
     gap: 32px;
   }
-
-    .hero__image {
-      display: none;
-    }
 }
