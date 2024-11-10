@@ -4,7 +4,6 @@ import { getCategories } from './api-requests';
 import createCategoriesMarkup from './markup/categoriesMarkup';
 import {loadCategories} from './categories';
 import {currentCategoryName} from './categories';
-import {currentCategoryFilter} from './categories';
 
 // Ініціалізація основних змінних
 let allCategories = [];
@@ -38,20 +37,12 @@ filterButtons.forEach(button => {
 // Обробник події для форми пошуку
 searchForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const searchKeyword = encodeURIComponent(searchInput.value.trim());
-  
-  switch (currentCategoryFilter) {
-    case 'Muscles':
-      renderWorkoutsByCategory('', currentCategoryName, '', searchKeyword, 1, 10);
-      break;
-    case 'Body parts':
-      renderWorkoutsByCategory(currentCategoryName, '', '', searchKeyword, 1, 10);
-      break;
-    case 'Equipment':
-      renderWorkoutsByCategory('', '', currentCategoryName, searchKeyword, 1, 10);
-      break;
+  const searchKeyword = searchInput.value.trim();
+  try {
+    renderWorkoutsByCategory('', currentCategoryName, '', searchKeyword, 1, 10);
+  } catch (error) {
+    console.error('Error loading exercises:', error);
   }
-
   searchInput.value = '';
 });
 

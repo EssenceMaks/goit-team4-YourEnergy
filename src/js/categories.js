@@ -9,7 +9,6 @@ let categoriesList = document.querySelector('.categories-list');
 let workoutsContainer = document.querySelector('.workouts-container');
 const categoriesPagination = document.querySelector('.m-categories .categories-pagination');
 export let currentCategoryName = "";
-export let currentCategoryFilter = "Muscles";
 
 export async function loadCategories(currentCategoryName) {
   const categoriesContainer = document.querySelector('.m-categories');
@@ -104,7 +103,6 @@ function openCategory(e) {
     
     updateHeaderTitle(categoryItem.dataset.name);
     const categoryFilter = categoryItem.dataset.filter;
-    currentCategoryFilter = categoryFilter;
     console.log(categoryName)
 
     switch (categoryFilter) {

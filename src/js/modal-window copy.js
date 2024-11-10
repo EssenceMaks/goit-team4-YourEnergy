@@ -1,6 +1,3 @@
-import { capitalizeFirstLetter } from './markup/stringUtils';
-import { removeFromFavorites } from './markup/favoritesUtils';
-
 export class ModalWindow {
   static instance = null;
 
@@ -81,38 +78,12 @@ export class ModalWindow {
 
   async open(exerciseData) {
     this.isOpen = true;
-    this.currentExerciseId = exerciseData._id;
-
     if (this.backdrop) {
       this.backdrop.classList.remove('is-hidden');
     }
     document.body.style.overflow = 'hidden';
 
     await this.updateContent(exerciseData);
-
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    this.isFavorite = favorites.some(
-      item => item.id === this.currentExerciseId
-    );
-
-    const favBtn = this.backdrop.querySelector('.modal-favorites-btn');
-    if (this.isFavorite) {
-      favBtn.innerHTML = `
-        Remove from favorites
-        <svg class="modal-icon-heart">
-          <use href="./img/icons.svg#icon-trash"></use>
-        </svg>
-      `;
-      favBtn.classList.add('is-favorite');
-    } else {
-      favBtn.innerHTML = `
-        Add to favorites
-        <svg class="modal-icon-heart">
-          <use href="./img/icons.svg#icon-heart"></use>
-        </svg>
-      `;
-      favBtn.classList.remove('is-favorite');
-    }
   }
 
   close() {
@@ -135,7 +106,6 @@ export class ModalWindow {
 
   async updateContent(data) {
     const {
-      _id,
       name,
       rating,
       target,
@@ -150,7 +120,7 @@ export class ModalWindow {
 
     const titleElement = this.backdrop.querySelector('.modal-title');
     if (titleElement) {
-      titleElement.textContent = capitalizeFirstLetter(name);
+      titleElement.textContent = name;
     }
 
     const mediaContainer = this.backdrop.querySelector(
@@ -178,9 +148,7 @@ export class ModalWindow {
         parameterItem.className = 'parameter-item';
         parameterItem.innerHTML = `
           <p class="modal-parameter-label">${label}</p>
-          <p class="modal-parameter-value">${this.capitalizeFirstLetter(
-            value
-          )}</p>
+          <p class="modal-parameter-value">${value}</p>
         `;
         parametersContainer.appendChild(parameterItem);
       });
@@ -189,7 +157,7 @@ export class ModalWindow {
     const descriptionElement =
       this.backdrop.querySelector('.modal-description');
     if (descriptionElement) {
-      descriptionElement.textContent = this.capitalizeFirstLetter(description);
+      descriptionElement.textContent = description;
     }
 
     const ratingElement = this.backdrop.querySelector('.rating-value');
@@ -198,53 +166,48 @@ export class ModalWindow {
     }
   }
 
-  capitalizeFirstLetter(string) {
-    if (typeof string === 'string' && string.length > 0) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-    return string;
-  }
-
   toggleFavorite() {
     this.isFavorite = !this.isFavorite;
     const favBtn = this.backdrop.querySelector('.modal-favorites-btn');
+    const ratingElement = this.backdrop.querySelector('.rating-value');
 
     if (this.isFavorite) {
       favBtn.innerHTML = `
         Remove from favorites
         <svg class="modal-icon-heart">
-          <use href="./img/icons.svg#icon-trash"></use>
+          <use href="./img/sprite.svg#icon-delete"></use>
         </svg>
       `;
       favBtn.classList.add('is-favorite');
 
-      this.saveToFavorites();
+      if (ratingElement) {
+        const currentRating = parseFloat(ratingElement.textContent);
+        ratingElement.textContent = (currentRating + 0.1).toFixed(1);
+      }
     } else {
       favBtn.innerHTML = `
         Add to favorites
         <svg class="modal-icon-heart">
-          <use href="./img/icons.svg#icon-heart"></use>
+          <use href="./img/sprite.svg#icon-heart"></use>
         </svg>
       `;
       favBtn.classList.remove('is-favorite');
 
-      removeFromFavorites(this.currentExerciseId);
+      if (ratingElement) {
+        const currentRating = parseFloat(ratingElement.textContent);
+        ratingElement.textContent = (currentRating - 0.1).toFixed(1);
+      }
+    }
+
+    const newIcon = favBtn.querySelector('.modal-icon-heart');
+    if (newIcon) {
+      newIcon.style.stroke = this.isFavorite ? '#f4f4f4' : '#242424';
     }
 
     favBtn.style.transform = 'scale(0.95)';
     setTimeout(() => {
       favBtn.style.transform = 'scale(1)';
     }, 200);
-  }
-
-  saveToFavorites() {
-    const exerciseData = {
-      id: this.currentExerciseId,
-      name: this.backdrop.querySelector('.modal-title').textContent,
-    };
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    favorites.push(exerciseData);
-    localStorage.setItem('favorites', JSON.stringify(favorites));
   }
 
   openRatingModal() {
