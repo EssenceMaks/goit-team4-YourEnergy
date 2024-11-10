@@ -19,7 +19,7 @@
 
 /* Стилі для пошукового рядка */
 
-.search-form.hidden {
+.search-form .hidden {
     display: none;
 }
 
@@ -105,7 +105,7 @@
 
 /* Адаптивні стилі для планшетів */
 @media (min-width: 601px) and (max-width: 1440px) {
- 
+
   .filters-panel {
     display: flex;
     align-items: center;
