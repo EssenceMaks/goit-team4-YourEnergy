@@ -293,14 +293,3 @@ export class ModalWindow {
     this.closeRatingModal();
   }
 }
-
-let modalWindowInstance = null;
-document.addEventListener('DOMContentLoaded', () => {
-  if (!modalWindowInstance) {
-    try {
-      modalWindowInstance = new ModalWindow();
-    } catch (error) {
-      console.error('Error initializing modal:', error);
-    }
-  }
-});

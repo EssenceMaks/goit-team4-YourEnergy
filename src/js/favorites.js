@@ -136,7 +136,6 @@ const fetchAndRenderFavorites = async () => {
           }
           window.modalWindow.open(exerciseData);
 
-
           // --------------якщо відкрили модалку, видалили картку, оновити це в розмітці---------
 
           // const closeBTtn = document.querySelector('.modal-close-btn');
@@ -148,15 +147,11 @@ const fetchAndRenderFavorites = async () => {
           //     fetchAndRenderFavorites();
           //   }
           // })
-
-
         } catch (error) {
           console.error('Error opening modal:', error);
         }
       });
     });
-
-    
   } catch (error) {
     console.error(error);
   }
