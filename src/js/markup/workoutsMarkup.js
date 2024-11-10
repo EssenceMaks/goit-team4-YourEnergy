@@ -27,7 +27,7 @@ export default function createWorkoutsMarkup(cards) {
                 </div>
                 <div class="trash-container hide">
                   <svg width="16" height="16">
-                    <use href="./img/icons.svg#icon-trash"></use>
+                    <use href="${iconSvg}#icon-trash"></use>
                   </svg>
                 </div>
                </div>
