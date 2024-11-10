@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/goit-team4-YourEnergy/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team4 Your Energy</title>
+
+    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/favorites-DD7gWht3.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/menu-DgQbA_Y5.js">
+    <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/vendor-CNNbG8jS.js">
+    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/favorites-D392yqqu.css">
+    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-fuEBnOsS.css">
+  </head>
+  <body>
+    <header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a class="logo" href="/" rel="noopener noreferrer" aria-label="YOUR ENERGY">
+        <svg width="132" height="24">
+          <use href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#logo"></use>
+        </svg>
+      </a>
+      <ul class="menu-items router">
+        <li class="menu-item active">
+          <a href="./index.html">Home</a>
+        </li>
+        <li class="menu-item">
+          <a href="./favorites.html">Favorites</a>
+        </li>
+      </ul>
+      <ul class="socials">
+        <li class="social-item">
+          <a href="https://www.facebook.com/goITclub/" rel="noopener noreferrer" target="_blank" aria-label="Link to Facebook">
+            <svg width="28" height="28">
+              <use href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="https://www.instagram.com/goitclub/" rel="noopener noreferrer" target="_blank" aria-label="Link to Instagram">
+            <svg width="28" height="28">
+              <use href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="https://www.youtube.com/c/GoIT" rel="noopener noreferrer" target="_blank" aria-label="Link to Youtube">
+            <svg width="28" height="28">
+              <use href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <button type="button" class="menu-btn" onclick="openMenu()">
+        <svg width="32" height="32">
+          <use href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#menu"></use>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+    <section class="main-favorites-content">
+      <div class="favorites-container container">
+        <h2 class="favorites-title">Favorites</h2>
+        <div class="sidebar-container">
+  <div class="sidebar-quote-container">
+    <svg
+      class="sidebar-quote-ranner-svg"
+      viewBox="0 0 32 32"
+      height="30"
+      width="32"
+      aria-hidden="true"
+    >
+      <use x="0" y="0" href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#icon-running"></use>
+    </svg>
+    <div class="sidebar-quote-wrapper">
+      <h3 class="sidebar-quote-of-day">Quote of the day</h3>
+      <div class="sidebar-quote"></div>
+      <div class="sidebar-quote-author"></div>
+    </div>
+    <svg
+      class="sidebar-quote-commas-svg"
+      viewBox="0 0 32 32"
+      width="24"
+      height="24"
+      aria-hidden="true"
+    >
+      <use x="0" y="0" href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#icon-commas"></use>
+    </svg>
+  </div>
+  <picture class="fav-picture">
+    <source
+      media="(min-width: 1440px)"
+      srcset="/goit-team4-YourEnergy/assets/sidebar-img-desktop@1x-CxeGngm_.jpg 1x, /goit-team4-YourEnergy/assets/sidebar-img-desktop@2x-Bi4mR2ZG.jpg 2x"
+    />
+    <source
+      media="(min-width: 768px)"
+      srcset="/goit-team4-YourEnergy/assets/sidebar-img-tablet@1x-cCZFiTk6.jpg 1x, /goit-team4-YourEnergy/assets/sidebar-img-tablet@2x-BHsn_n0i.jpg 2x"
+    />
+    <img
+      class="sidebar-quote-image"
+      srcset="/goit-team4-YourEnergy/assets/sidebar-img-mobile@1x-FeKAmjRU.jpg 1x, /goit-team4-YourEnergy/assets/sidebar-img-mobile@2x-DiOBOa_G.jpg 2x"
+      src="/goit-team4-YourEnergy/assets/sidebar-img-mobile@1x-FeKAmjRU.jpg"
+      alt="sidebar-container"
+      loading="lazy"
+    />
+  </picture>
+  <div class="sidebar-sports-info">
+    <svg
+      class="sidebar-quote-dumbbell-svg"
+      viewBox="0 0 32 32"
+      height="30"
+      width="32"
+      aria-hidden="true"
+    >
+      <use x="0" y="0" href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#icon-dumbbell"></use>
+    </svg>
+    <div class="sidebar-sports-wrapper">
+      <div class="sidebar-time">110 min</div>
+      <p class="sidebar-norm-sport">Daily norm of sports</p>
+      <div class="static-info">
+        The World Health Organization recommends at least 150 minutes of
+        moderate-intensity aerobic physical activity throughout the week for
+        adults aged 18-64. However, what happens if we adjust that number to 110
+        minutes every day? While it might seem like a high number to hit,
+        dedicating 110 minutes daily to sporting activities may offer
+        unparalleled benefits to physical health, mental well-being, and overall
+        quality of life.
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="favorites-page-wrap">
+  <p class="favorites-page-text">
+    It appears that you haven't added any exercises to your favorites yet. To
+    get started, you can add exercises that you like to your favorites for
+    easier access in the future.
+  </p>
+  <ul class="favorites-cards"></ul>
+</div>
+
+      </div>
+      <div id="backdrop" class="backdrop" onclick="closeMenu()">
+  <div class="mobile-menu" onclick="menuLayoutClickHandler(event)">
+    <div class="btn-menu-wrap">
+      <button
+        type="button"
+        onclick="closeMenu()"
+        class="menu-close-button"
+        aria-label="Close mobile menu button"
+      >
+        <svg class="menu-close-icon" width="32" height="32">
+          <use href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#icon-x_icon"></use>
+        </svg>
+      </button>
+    </div>
+    <ul class="menu-items">
+      <li class="menu-item" onclick="closeMenu()">
+        <a href="/">Home</a>
+      </li>
+      <li class="menu-item" onclick="closeMenu()">
+        <a href="/favorites">Favorites</a>
+      </li>
+    </ul>
+
+    <ul class="socials">
+      <li class="social-item">
+        <a
+          href="https://www.facebook.com/goITclub/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Link to Facebook"
+        >
+          <svg class="social-icon" width="26" height="26">
+            <use href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="social-item">
+        <a
+          href="https://www.instagram.com/goitclub/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Link to Instagram"
+        >
+          <svg class="social-icon" width="26" height="26">
+            <use href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#instagram"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="social-item">
+        <a
+          href="https://www.youtube.com/c/GoIT"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Link to Youtube"
+        >
+          <svg class="social-icon" width="26" height="26">
+            <use href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#youtube"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+      <div class="workouts-pagination favorites-pagination">
+  <div
+    class="pagination bind categories-pagination workouts-pagination"
+    data-current="0"
+    data-total="0"
+  ></div>
+</div>
+
+
+
+    </section>
+    <div class="modal-backdrop is-hidden" data-modal>
+  <div class="modal">
+    <button type="button" class="modal-close-btn" data-modal-close>
+      <svg class="modal-close-icon" width="24" height="24">
+        <use href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#icon-x_icon"></use>
+      </svg>
+    </button>
+    
+    <div class="modal-content">
+      <div class="modal-media">
+        <div class="modal-media-container">
+          <!-- Зображення буде додано через JavaScript -->
+        </div>
+      </div>
+      
+      <div class="modal-info">
+        <div class="modal-info-description">
+            <div class="modal-title-rating">
+                <h3 class="modal-title"><!-- Назва вправи буде додана через JavaScript --></h3>
+                
+                <div class="modal-rating">
+                    <p class="rating-value">
+                        <!-- Значення рейтингу буде додано через JavaScript -->
+                    </p>
+                    <div class="rating-stars">
+                        <!-- Зірки рейтингу будуть додані через JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="modal-parameters">
+            <!-- Один шаблонний елемент -->
+            <li class="parameter-item">
+                <p class="modal-parameter-label"></p>
+                <p class="modal-parameter-value"></p>
+            </li>
+            </ul>
+            
+            <p class="modal-description">
+            <!-- Опис буде додано через JavaScript -->
+            </p>
+        </div>
+        
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="modal-btn modal-favorites-btn">
+        Add to favorites
+        <svg class="modal-icon-heart">
+          <use href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#icon-heart"></use>
+        </svg>
+      </button>
+      <button type="button" class="modal-btn modal-rating-btn">
+        Give a rating
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Додаємо нове модальне вікно для рейтингу після основного -->
+<div class="modal-backdrop is-hidden" data-rating-modal>
+  <div class="modal rating-modal">
+    <button type="button" class="modal-close-btn" data-rating-close>
+      <svg class="modal-close-icon" width="24" height="24">
+        <use href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#icon-x_icon"></use>
+      </svg>
+    </button>
+    
+    <form class="rating-form">
+
+      <div class="rating-form-stars-container">
+        <p class="rating-form-stars-title">Rating</p>
+        <div class="rating-form-value-stars">
+          <p class="rating-form-value">
+            <!-- Значення рейтингу буде додано через JavaScript -->
+          </p>
+          <div class="rating-form-stars">
+            <!-- Зірки рейтингу будуть додані через JavaScript -->
+          </div>
+        </div>
+      </div>
+      
+      <div class="rating-form-group-container">
+          <div class="rating-form-group">
+            <input 
+            type="email" 
+            id="rating-email" 
+            class="rating-form-input" 
+            placeholder="Email"
+            required
+          >
+          </div>
+      
+        <div class="rating-form-group">
+          <textarea 
+            id="rating-comment" 
+            class="rating-form-textarea"
+            placeholder="Your comment"
+            required
+          ></textarea>
+        </div>
+      </div>
+      
+      <button type="submit" class="modal-btn rating-form-btn">
+        Send
+      </button>
+    </form>
+  </div>
+</div>
+
+
+  </body>
+</html>

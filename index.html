@@ -5,9 +5,10 @@
     <link rel="icon" type="image/svg+xml" href="/goit-team4-YourEnergy/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team4 Your Energy</title>
-    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-CEyKB3Fq.js"></script>
+    <script type="module" crossorigin src="/goit-team4-YourEnergy/assets/index-BFtuONNY.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/menu-DgQbA_Y5.js">
     <link rel="modulepreload" crossorigin href="/goit-team4-YourEnergy/assets/vendor-CNNbG8jS.js">
-    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-zPxaYCUl.css">
+    <link rel="stylesheet" crossorigin href="/goit-team4-YourEnergy/assets/styles-fuEBnOsS.css">
   </head>
   <body>
     <header class="header">
@@ -23,7 +24,7 @@
           <a href="./index.html">Home</a>
         </li>
         <li class="menu-item">
-          <a href="favorites">Favorites</a>
+          <a href="./favorites.html">Favorites</a>
         </li>
       </ul>
       <ul class="socials">
@@ -257,7 +258,7 @@
 
 
                 <div class="categories-pagination m-pagination">
-                  <div class="workouts-pagination">
+                  <div class="workouts-pagination favorites-pagination">
   <div
     class="pagination bind categories-pagination workouts-pagination"
     data-current="0"
@@ -277,7 +278,7 @@
 
                 <!-- </div> -->
                 <div class="workouts-pagination m-pagination">
-                  <div class="workouts-pagination">
+                  <div class="workouts-pagination favorites-pagination">
   <div
     class="pagination bind categories-pagination workouts-pagination"
     data-current="0"
@@ -315,7 +316,7 @@
       <use x="0" y="0" href="/goit-team4-YourEnergy/assets/icons-BTIkT1Ap.svg#icon-commas"></use>
     </svg>
   </div>
-  <picture>
+  <picture class="fav-picture">
     <source
       media="(min-width: 1440px)"
       srcset="/goit-team4-YourEnergy/assets/sidebar-img-desktop@1x-CxeGngm_.jpg 1x, /goit-team4-YourEnergy/assets/sidebar-img-desktop@2x-Bi4mR2ZG.jpg 2x"
@@ -361,6 +362,56 @@
           </div>
         </div>
       </section>
+      <!-- <div class="favorites-page hidden">
+      <div class="container">
+  <h2 class="favorites-title">Favorites</h2>
+
+  <div class="bars-wrapper">
+    <div class="left-bar">
+      <div class="sidebar-quote-container favorites-card">
+        <h4 class="sidebar-quote-of-day">Quote of the day</h4>
+        <p class="sidebar-quote"></p>
+        <h4 class="sidebar-quote-author"></h4>
+      </div>
+      <div class="card-group">
+        <picture>
+          <source
+            media="(min-width: 1280px)"
+            srcset="
+        ./img/sidebar/sidebar-img-desktop@1x.jpg 1x,
+        ./img/sidebar/sidebar-img-desktop@2x.jpg 2x
+      "
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="
+        ./img/sidebar/sidebar-img-tablet@1x.jpg 1x,
+        ./img/sidebar/sidebar-img-tablet@2x.jpg 2x
+      "
+          />
+          <img
+            class="sidebar-quote-image"
+            srcset="
+        ./img/sidebar/sidebar-img-mobile@1x.jpg 1x,
+        ./img/sidebar/sidebar-img-mobile@2x.jpg 2x
+      "
+            src="./img/sidebar/sidebar-img-mobile@1x.jpg"
+            alt="sidebar-container"
+            loading="lazy"
+          />
+        </picture>
+        <div class="sidebar-sports-info">
+          <h4 class="sidebar-time">110 min</h4>
+          <h6 class="sidebar-norm-sport">Daily norm of sports</h6>
+        </div>
+      </div>
+    </div>
+    <div class="right-bar saved">
+
+    </div>
+  </div>
+</div>
+    </div> -->
     </main>
     <footer class="footer">
   <div class="footer-container container">
@@ -472,47 +523,7 @@
   </div>
 </footer>
 
-    <div class="favorites-page hidden">
-      <div class="container">
-  <h2 class="favorites-title">Favorites</h2>
-
-  <div class="bars-wrapper">
-    <div class="left-bar">
-      <div class="sidebar-quote-container favorites-card">
-        <h4 class="sidebar-quote-of-day">Quote of the day</h4>
-        <p class="sidebar-quote"></p>
-        <h4 class="sidebar-quote-author"></h4>
-      </div>
-      <div class="card-group">
-        <picture>
-          <source
-            media="(min-width: 1280px)"
-            srcset="/goit-team4-YourEnergy/assets/sidebar-img-desktop@1x-CxeGngm_.jpg 1x, /goit-team4-YourEnergy/assets/sidebar-img-desktop@2x-Bi4mR2ZG.jpg 2x"
-          />
-          <source
-            media="(min-width: 768px)"
-            srcset="/goit-team4-YourEnergy/assets/sidebar-img-tablet@1x-cCZFiTk6.jpg 1x, /goit-team4-YourEnergy/assets/sidebar-img-tablet@2x-BHsn_n0i.jpg 2x"
-          />
-          <img
-            class="sidebar-quote-image"
-            srcset="/goit-team4-YourEnergy/assets/sidebar-img-mobile@1x-FeKAmjRU.jpg 1x, /goit-team4-YourEnergy/assets/sidebar-img-mobile@2x-DiOBOa_G.jpg 2x"
-            src="/goit-team4-YourEnergy/assets/sidebar-img-mobile@1x-FeKAmjRU.jpg"
-            alt="sidebar-container"
-            loading="lazy"
-          />
-        </picture>
-        <div class="sidebar-sports-info">
-          <h4 class="sidebar-time">110 min</h4>
-          <h6 class="sidebar-norm-sport">Daily norm of sports</h6>
-        </div>
-      </div>
-    </div>
-    <div class="right-bar saved">
-
-    </div>
-  </div>
-</div>
-    </div>
+    
 
     <div class="modal-backdrop is-hidden" data-modal>
   <div class="modal">
