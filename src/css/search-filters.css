@@ -164,9 +164,16 @@
     .search-form.visible {
       max-width: 335px;
     }
+    .search-form {
+    max-width: 273px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+
 
     .search-input {
-      height: 20px;
+      height: 48px;
       margin-top: 0;
       margin-bottom: 32px;
     }
@@ -220,9 +227,19 @@
     color: rgba(36, 36, 36, 0.5);
     }
 
+
   .search-form {
     max-width: 400px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
   }
+
+    .search-input {
+      height: 48px;
+      margin-top: 0;
+      margin-bottom: 32px;
+    }
 
   .filters-buttons {
     gap: 1rem;
