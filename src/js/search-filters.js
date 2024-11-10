@@ -6,7 +6,7 @@ import {loadCategories} from './categories'
 
 // Ініціалізація основних змінних
 let allCategories = [];
-const selectedCategoryElement = document.querySelector('.selected-category');
+const selectedCategoryElement = document.querySelector('.filters-title');
 const categoriesList = document.querySelector('.categories-list');
 const filterButtons = document.querySelectorAll('.filter-button');
 const searchForm = document.querySelector('#search-form');
@@ -63,7 +63,7 @@ function openCategory(e) {
 // Функція для оновлення заголовка з обраним фільтром і категорією
 export function updateHeaderTitle(categoryName = false) {
   // selectedCategoryElement.textContent = categoryName ? ` / ${categoryName}` : '';
-  selectedCategoryElement.innerHTML = categoryName ? ' / ' + '<span class="breadcrumbs">' + categoryName + '</span>' : '';
+  selectedCategoryElement.innerHTML = categoryName ? 'Exercises / ' + '<span class="selected-category">' + categoryName + '</span>' : 'Exercises';
 }
 
 function attachCategoryListeners() {
