@@ -23,11 +23,11 @@ export const initPagination = () => {
       const currentPage = parseInt(pagination.getAttribute('data-current'));
 
       pagination.appendChild(generatePages(totalPages, currentPage));
-      
+
       pagination.addEventListener('click', async (e) => {
         if (e.target.classList.contains('pagination-page')) {
           e.preventDefault();
-          
+
           const pages = pagination.querySelectorAll('.pagination-page');
           pages.forEach(page => {
             page.classList.remove('selected');
@@ -54,4 +54,6 @@ export const initPagination = () => {
 };
 
 // Инициализация при загрузке страницы
-document.addEventListener('DOMContentLoaded', initPagination); 
+document.addEventListener('DOMContentLoaded', initPagination);
+
+
