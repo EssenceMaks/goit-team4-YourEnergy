@@ -7,7 +7,7 @@
 }
 
 .hero-photo-small {
- display: none;
+  display: none;
 }
 
 .hero .hero__media-content {
@@ -114,7 +114,6 @@
   display: block; /* Уберем display: none */
 /* border-radius: 15px;
 } */
-*/
 
 /* .hero__images {
   width: 168px;
@@ -202,10 +201,16 @@
     padding-top: 96px;
     padding-bottom: 32px;
   }
+
+  .hero__image {
+    height: 350px;
+    width: 100%;
+  }
+
   .hero__media-content {
     position: relative;
   }
-  
+
   .hero__image--desktop {
     display: block;
     width: 168px;
@@ -225,8 +230,6 @@
     height: 59px;
   }
 
-
-
   .hero__media-content {
     display: flex;
     flex-direction: column;
@@ -242,7 +245,6 @@
   }
 
   .hero__tags {
-   
     justify-items: center;
     max-width: 168px;
     gap: 8px;
@@ -307,7 +309,6 @@
     font-size: 16px;
   }
   .hidden-photo {
-    
     border-radius: 20px;
     display: block;
     position: absolute;
