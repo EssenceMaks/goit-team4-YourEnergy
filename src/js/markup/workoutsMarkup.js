@@ -1,3 +1,4 @@
+import iconSvg from '/img/icons.svg';
 import { capitalizeFirstLetter } from './stringUtils';
 
 export default function createWorkoutsMarkup(cards) {
@@ -21,7 +22,7 @@ export default function createWorkoutsMarkup(cards) {
                     width="16"
                     aria-hidden="true"
                   >
-                    <use x="0" y="0" href="./img/icons.svg#icon-Star"></use>
+                    <use x="0" y="0" href="${iconSvg}#icon-Star"></use>
                   </svg>
                 </div>
                 <div class="trash-container hide">
@@ -38,7 +39,7 @@ export default function createWorkoutsMarkup(cards) {
                     width="16"
                     aria-hidden="true"
                   >
-                    <use x="0" y="0" href="./img/icons.svg#icon-arrow"></use>
+                    <use x="0" y="0" href="${iconSvg}#icon-arrow"></use>
                   </svg>
               </button>
             </div>
@@ -50,7 +51,7 @@ export default function createWorkoutsMarkup(cards) {
                 width="24"
                 aria-hidden="true"
               >
-                <use x="0" y="0" href="./img/icons.svg#icon-running"></use>
+                <use x="0" y="0" href="${iconSvg}#icon-running"></use>
               </svg>
               <h3 class="title text-overflow">${capitalizeFirstLetter(
                 name
@@ -67,3 +68,5 @@ export default function createWorkoutsMarkup(cards) {
     })
     .join('');
 }
+
+
