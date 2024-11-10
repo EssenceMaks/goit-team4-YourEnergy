@@ -95,9 +95,11 @@
 
 @media (min-width: 768px) {
   .categories-list {
+    align-content: flex-start;
     width: 705px;
     gap: 32px 15px;
     margin-bottom: 32px;
+    height: 1064px;
   }
 
   .categories-item {

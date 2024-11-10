@@ -1,0 +1,114 @@
+.main-favorites-content {
+  padding: 80px 0 40px;
+}
+.sidebar-container {
+  margin: 0;
+  padding: 20px 0 0;
+}
+.favorites-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.36;
+  letter-spacing: -0.02em;
+  color: #242424;
+  margin: 0;
+}
+picture {
+  order: 2;
+}
+.static-info {
+  display: none;
+}
+.favorites-page-wrap {
+  
+}
+.favorites-page-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  text-align: center;
+  color: #242424;
+  width: 318px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+@media screen and (min-width: 768px) {
+  .favorites-title {
+    font-size: 44px;
+    line-height: 1.09;
+  }
+  .main-favorites-content {
+    padding: 100px 0 55px;
+  }
+  .sidebar-container {
+    gap: 16px;
+    padding: 32px 0 0;
+  }
+  .sidebar-quote-container {
+    width: 100%;
+    min-width: 100%;
+  }
+  picture,
+  .sidebar-quote-image {
+    width: 344px;
+    height: 141px;
+  }
+  .sidebar-sports-info {
+    width: 344px;
+    height: 141px;
+  }
+  .favorites-page-text {
+    font-size: 18px;
+    line-height: 1.33;
+    width: 554px;
+    padding: 132px 0;
+  }
+  .favorites-page-wrap {
+    
+  }
+}
+@media screen and (min-width: 1440px) {
+  .main-favorites-content {
+    padding: 90px 0 163px;
+  }
+  .favorites-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  .favorites-title {
+    width: 100%;
+  }
+  div.sidebar-container {
+    width: 494px;
+    gap: 16px;
+    flex-direction: row;
+  }
+  picture,
+  .sidebar-quote-image {
+    width: 239px;
+    min-height: unset;
+  }
+  .sidebar-sports-info {
+    width: 239px;
+    padding-left: 25px;
+    padding-top: 60px;
+  }
+  div.static-info {
+    display: none;
+  }
+  .sidebar-quote-dumbbell-svg {
+    left: 20px;
+    top: 20px;
+  }
+  .favorites-page-text {
+    font-size: 18px;
+    line-height: 1.33;
+    width: 554px;
+  }
+  .favorites-page-wrap {
+    width: 850px;
+  }
+}
