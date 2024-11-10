@@ -87,6 +87,10 @@
   color: #242424;
 }
 
+.hero__wide-image {
+  display: none;
+}
+
 /* Hide images by default */
 /* .hero__image--mobile,
 .hero__image--tablet,
@@ -129,6 +133,7 @@
   object-fit: cover;
   border-radius: 15px;
 } */
+
 @media screen and (min-width: 375px) {
   .hero__description {
     width: 335px;
@@ -136,7 +141,9 @@
   .hero__image {
     width: 335px;
   }
-}
+
+    
+  }
 
 @media screen and (min-width: 768px) and (max-width: 1440px) {
   .hero {
@@ -192,12 +199,9 @@
   }
 
   .hero__wide-image {
-    height: 550px;
+    display: none;
   }
-  .hero__wide-image img {
-    height: 100%;
-    object-fit: cover;
-  }
+  
 }
 @media screen and (min-width: 1440px) {
   .hero {
@@ -274,9 +278,15 @@
   .hero .hero__images {
     display: block;
   }
+
+    .hero__wide-image {
+      border-radius: 60px;
+      display: block;
+    }
   /* Явно показываем изображения на десктопе */
   .hero__wide-image img {
     display: block;
+    border-radius: 60px;
   }
 
   .hero__images {
@@ -325,4 +335,8 @@
     flex-direction: row-reverse;
     gap: 32px;
   }
+
+    .hero__image {
+      display: none;
+    }
 }
