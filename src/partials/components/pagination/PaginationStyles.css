@@ -4,27 +4,45 @@
   gap: 20px;
   color: lightgray;
   order: 2;
+  align-items: center;
 }
-.pagination p {
+
+.workouts-pagination,
+.categories-pagination {
+  gap: 4px;
+}
+
+/* Добавляем стили для многоточия */
+.pagination-dots {
+  color: #000;
+  font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  cursor: default;
 }
-.selected{
+
+.pagination-page {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 1);
-  transition: 0.2s ease-in-out;
-  color: black;
-  width: 32px;
+  min-width: 32px;
   height: 32px;
+  border-radius: 50%;
+  transition: 0.2s ease-in-out;
+}
+
+.pagination-page:hover:not(.selected) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.selected {
+  border: 1px solid rgba(0, 0, 0, 1);
+  color: black;
 }
 
 @media screen and (min-width: 1280px) {
-  /*це можна видалити додала для того щоб було видно результат*/
   .pagination {
     position: absolute;
     bottom: 0;

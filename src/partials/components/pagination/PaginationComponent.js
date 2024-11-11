@@ -3,6 +3,7 @@ const paginations = document.querySelectorAll('.pagination-test');
 const createPagination = (paginationContainer, currentPage, totalPages, maxVisiblePages = 5) => {
 
   paginationContainer.innerHTML = "";
+  paginationContainer.style.gap = "4px";
 
   function createPageButton(page, isActive = false) {
     const button = document.createElement("button");

@@ -48,4 +48,20 @@
 /* Специфичные стили для воркаутов */
 .m-workouts .pagination {
   margin-top: 20px;
-} 
+}
+
+.workouts-pagination,
+.categories-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.workouts-pagination.pagination,
+.categories-pagination.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px !important;
+}
