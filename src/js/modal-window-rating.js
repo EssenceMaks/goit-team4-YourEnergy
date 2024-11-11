@@ -71,7 +71,6 @@ export class ModalWindowRating {
   openRatingModal(exerciseId) {
     if (this.ratingBackdrop && this.backdrop) {
       this.currentExerciseId = exerciseId;
-      console.log('Setting exercise ID:', exerciseId);
 
       this.backdrop.classList.add('is-hidden');
       this.ratingBackdrop.classList.remove('is-hidden');
