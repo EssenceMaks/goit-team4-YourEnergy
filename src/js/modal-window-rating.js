@@ -1,4 +1,6 @@
-import { addRatingRequest } from './api-service';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+import { addRatingRequest, exerciseUrl } from './api-service';
 
 export class ModalWindowRating {
   static instance = null;
@@ -69,6 +71,8 @@ export class ModalWindowRating {
   openRatingModal(exerciseId) {
     if (this.ratingBackdrop && this.backdrop) {
       this.currentExerciseId = exerciseId;
+      console.log('Setting exercise ID:', exerciseId);
+
       this.backdrop.classList.add('is-hidden');
       this.ratingBackdrop.classList.remove('is-hidden');
       this.updateRatingDisplay('0.0');
@@ -93,6 +97,11 @@ export class ModalWindowRating {
   async handleRatingSubmit(e) {
     e.preventDefault();
 
+    if (!this.currentExerciseId) {
+      this.showNotification('Exercise ID is missing', 'error');
+      return;
+    }
+
     const email = this.ratingForm.querySelector('#rating-email').value.trim();
     const comment = this.ratingForm
       .querySelector('#rating-comment')
@@ -110,29 +119,87 @@ export class ModalWindowRating {
       return;
     }
 
-    try {
-      const response = await addRatingRequest(this.currentExerciseId, {
-        rate: parseFloat(selectedRating.value),
-        email,
-        review: comment,
-      });
+    const ratingData = {
+      rate: parseFloat(selectedRating.value),
+      email: email.toLowerCase(),
+      review: comment.trim(),
+    };
 
-      if (response.ok) {
+    console.log('Validation check:', {
+      isRateValid:
+        Number.isFinite(ratingData.rate) &&
+        ratingData.rate >= 1 &&
+        ratingData.rate <= 5,
+      isEmailValid: emailPattern.test(ratingData.email),
+      isReviewValid: ratingData.review.length > 0,
+    });
+
+    try {
+      console.log('Exercise ID:', this.currentExerciseId);
+      console.log('Rating data:', ratingData);
+      console.log(
+        'Request URL:',
+        `${exerciseUrl()}/${this.currentExerciseId}/rating`
+      );
+
+      const response = await addRatingRequest(
+        this.currentExerciseId,
+        ratingData
+      );
+
+      console.log('Full response:', response);
+
+      if (response.data) {
         this.closeRatingModal();
         this.showNotification('Rating added successfully', 'success');
-      } else {
-        const error = await response.json();
-        throw new Error(error.message || 'Failed to add rating');
       }
     } catch (error) {
-      this.showNotification(error.message, 'error');
+      let errorMessage = 'Failed to add rating';
+
+      // Обробляємо різні типи помилок
+      if (error.response?.data?.message) {
+        if (error.response.data.message.includes('email already exists')) {
+          errorMessage = 'Such email already exists';
+        } else {
+          errorMessage = error.response.data.message;
+        }
+      }
+
+      this.showNotification(errorMessage, 'error');
     }
   }
 
   showNotification(message, type) {
-    // Тут можна використовувати будь-яку бібліотеку для нотифікацій
-    // Наприклад, Notiflix або iziToast
-    console.log(`${type}: ${message}`);
+    const options = {
+      position: 'topRight',
+      timeout: 3000,
+      close: false,
+      closeOnClick: true,
+    };
+
+    switch (type) {
+      case 'success':
+        iziToast.success({
+          ...options,
+          message,
+          backgroundColor: '#64B880',
+          messageColor: '#fff',
+        });
+        break;
+      case 'error':
+        iziToast.error({
+          ...options,
+          message,
+          backgroundColor: '#EF4040',
+          messageColor: '#fff',
+        });
+        break;
+      default:
+        iziToast.info({
+          ...options,
+          message,
+        });
+    }
   }
 }
 
