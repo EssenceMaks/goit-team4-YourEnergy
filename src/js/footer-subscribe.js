@@ -32,7 +32,9 @@ form.addEventListener('submit', async (event) => {
             title: 'Error',
             message: 'Please enter a valid email',
             position: 'topRight',
-            timeout: 2000
+            timeout: 3000,
+            backgroundColor: '#EF4040',
+            messageColor: '#fff'
         });
         return;
     }
@@ -48,22 +50,27 @@ form.addEventListener('submit', async (event) => {
                     title: 'Warning',
                     message: 'This email is already subscribed.',
                     position: 'topRight',
-                    timeout: 2000
+                    timeout: 3000,
+                    messageColor: '#fff'
                 });
             } else {
                 iziToast.error({
                     title: 'Error',
                     message: 'Subscription failed. Please try again later.',
                     position: 'topRight',
-                    timeout: 2000
+                    timeout: 3000,
+                    backgroundColor: '#EF4040',
+                    messageColor: '#fff'
                 });
             }
         } else {
             iziToast.success({
-                title: 'Success',
+                title: '',
                 message: 'Subscription successful!',
                 position: 'topRight',
-                timeout: 2000
+                timeout: 3000,
+                backgroundColor: '#64B880',
+                messageColor: '#fff'
             });
         }
     } catch (error) {
@@ -72,14 +79,17 @@ form.addEventListener('submit', async (event) => {
                 title: 'Warning',
                 message: 'This email is already subscribed.',
                 position: 'topRight',
-                timeout: 2000
+                timeout: 3000,
+                messageColor: '#fff'
             });
         } else {
             iziToast.error({
                 title: 'Error',
                 message: 'Subscription failed. Please try again later.',
                 position: 'topRight',
-                timeout: 2000
+                timeout: 3000,
+                backgroundColor: '#EF4040',
+                messageColor: '#fff'
             });
         }
     }
