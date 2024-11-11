@@ -3,6 +3,10 @@ import { removeFromFavorites } from './markup/favoritesUtils';
 import { setStartRating } from './set-star-rating';
 import { getIconPath } from './utils/iconPaths';
 
+const BASE_URL = window.location.hostname === 'localhost' 
+  ? '' 
+  : '/goit-team4-YourEnergy';
+
 export class ModalWindow {
   static instance = null;
 
