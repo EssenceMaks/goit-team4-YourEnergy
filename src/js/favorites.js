@@ -62,7 +62,7 @@ export async function fetchAndRenderFavorites() {
       workoutMarkup = createWorkoutsMarkup(dataList);
       favoritesText.style.display = 'none';
       favoritesCards.innerHTML = workoutMarkup;
-      changeTrash();
+      // changeTrash();
       categoriesPagination.innerHTML = '';
     } else {
       workoutMarkup = createWorkoutsMarkup(
@@ -124,6 +124,12 @@ export async function fetchAndRenderFavorites() {
   } catch (error) {
     console.error(error);
   }
+
+  const trashContainers = document.querySelectorAll('.trash-container');
+  trashContainers.forEach(trash => {
+    trash.classList.remove('hide');
+    trash.addEventListener('click', deleteFromFavorites);
+  });
 };
 
 function deleteFromFavorites(e) {
@@ -175,7 +181,7 @@ function handlePagination(e) {
   const pageItems = dataList.slice(startIndex, endIndex);
 
   favoritesCards.innerHTML = createWorkoutsMarkup(pageItems);
-  changeTrash();
+  // changeTrash();
 }
 
 function changeTrash() {

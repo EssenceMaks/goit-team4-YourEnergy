@@ -30,7 +30,7 @@
 
 .trash-container:hover,
 .trash-container:focus {
-  animation: moveLeftRight 2s ease-in-out infinite;  
+  /* animation: moveLeftRight 2s ease-in-out infinite;   */
 }
 
 .favorites-sidebar-container {
