@@ -12,11 +12,6 @@ import './js/modal-window.js';
 import './js/favorites.js';
 import './js/modal-window-rating.js';
 
-// Если мы на странице task-management, загружаем дополнительные стили
-if (window.location.pathname.includes('task-management')) {
-  import('./css/_task-manager.css');
-}
-
 // Функция для инициализации TaskManager
 async function initTaskManager() {
   if (!window.taskManager) {
