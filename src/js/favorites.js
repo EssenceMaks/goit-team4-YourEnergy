@@ -5,27 +5,27 @@ import { generatePages } from './pagination';
 import { ModalWindow } from './modal-window';
 
 const currentPath = window.location.pathname;
-
-
 const menuItems = document.querySelectorAll('.menu-item');
+const favoritesText = document.querySelector('.favorites-page-text');
+const favoritesCards = document.querySelector('.favorites-cards');
+const categoriesPagination = document.querySelector('.favorites-pagination');
+let getFavorites = [];
+let dataList = [];
+let currentPage = 0;
 
 if (currentPath.includes('favorites.html')) {
   menuItems.forEach(item => item.classList.remove('active'));
   menuItems[1].classList.add('active');
+  fetchAndRenderFavorites();
 }
 
-const favoritesText = document.querySelector('.favorites-page-text');
-const favoritesCards = document.querySelector('.favorites-cards');
-const categoriesPagination = document.querySelector('.favorites-pagination');
-
-let getFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-let dataList = [];
-let currentPage = 0;
-
-const fetchAndRenderFavorites = async () => {
+export async function fetchAndRenderFavorites() {
+  getFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
   if (!getFavorites || getFavorites.length === 0) {
     favoritesText.style.display = 'block';
     favoritesCards.innerHTML = '';
+    favoritesCards.style.display = 'none';
+    categoriesPagination.style.display = 'none';
     return;
   }
 
@@ -105,7 +105,6 @@ const fetchAndRenderFavorites = async () => {
           }
           window.modalWindow.open(exerciseData);
 
-
           // --------------якщо відкрили модалку, видалили картку, оновити це в розмітці---------
 
           // const closeBTtn = document.querySelector('.modal-close-btn');
@@ -117,15 +116,11 @@ const fetchAndRenderFavorites = async () => {
           //     fetchAndRenderFavorites();
           //   }
           // })
-
-
         } catch (error) {
           console.error('Error opening modal:', error);
         }
       });
     });
-
-    
   } catch (error) {
     console.error(error);
   }
@@ -141,6 +136,8 @@ function deleteFromFavorites(e) {
   if (!getFavorites || getFavorites.length === 0) {
     favoritesText.style.display = 'block';
     favoritesCards.innerHTML = '';
+    favoritesCards.style.display = 'none';
+    categoriesPagination.style.display = 'none';
   } else {
     const totalPages = Math.ceil(getFavorites.length / 8);
     if (currentPage >= totalPages) {
@@ -155,7 +152,7 @@ function handlePagination(e) {
   const page = Number(e.target.dataset.index);
   currentPage = page;
   categoriesPagination.setAttribute('data-current', currentPage);
-  let pages = categoriesPagination.querySelectorAll('p');
+  let pages = categoriesPagination.querySelectorAll('li');
   pages.forEach(pag => {
     pag.classList.remove('selected');
   });
@@ -192,4 +189,4 @@ function changeTrash() {
   });
 }
 
-fetchAndRenderFavorites();
+// fetchAndRenderFavorites();

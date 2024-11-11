@@ -255,14 +255,10 @@ export class ModalWindow {
 
   openRatingModal() {
     if (this.ratingBackdrop && this.backdrop) {
-      this.backdrop.classList.add('is-hidden');
-      this.ratingBackdrop.classList.remove('is-hidden');
-      this.originalEscapeHandler = document.onkeydown;
-      document.onkeydown = e => {
-        if (e.key === 'Escape') {
-          this.closeRatingModal();
-        }
-      };
+      if (!window.modalWindowRating) {
+        window.modalWindowRating = new ModalWindowRating();
+      }
+      window.modalWindowRating.openRatingModal(this.currentExerciseId);
     }
   }
 
@@ -293,14 +289,3 @@ export class ModalWindow {
     this.closeRatingModal();
   }
 }
-
-let modalWindowInstance = null;
-document.addEventListener('DOMContentLoaded', () => {
-  if (!modalWindowInstance) {
-    try {
-      modalWindowInstance = new ModalWindow();
-    } catch (error) {
-      console.error('Error initializing modal:', error);
-    }
-  }
-});
