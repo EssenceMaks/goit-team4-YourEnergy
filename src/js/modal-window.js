@@ -97,21 +97,16 @@ export class ModalWindow {
     );
 
     const favBtn = this.backdrop.querySelector('.modal-favorites-btn');
+    const btnText = favBtn.querySelector('.favorites-btn-text');
+    const iconUse = favBtn.querySelector('use');
+
     if (this.isFavorite) {
-      favBtn.innerHTML = `
-        Remove from favorites
-        <svg class="modal-icon-heart">
-          <use href="./img/icons.svg#icon-trash"></use>
-        </svg>
-      `;
+      btnText.textContent = 'Remove from favorites';
+      iconUse.setAttribute('href', './img/icons.svg#icon-trash');
       favBtn.classList.add('is-favorite');
     } else {
-      favBtn.innerHTML = `
-        Add to favorites
-        <svg class="modal-icon-heart">
-          <use href="./img/icons.svg#icon-heart"></use>
-        </svg>
-      `;
+      btnText.textContent = 'Add to favorites';
+      iconUse.setAttribute('href', './img/icons.svg#icon-heart');
       favBtn.classList.remove('is-favorite');
     }
   }
@@ -214,33 +209,20 @@ export class ModalWindow {
   toggleFavorite() {
     this.isFavorite = !this.isFavorite;
     const favBtn = this.backdrop.querySelector('.modal-favorites-btn');
+    const btnText = favBtn.querySelector('.favorites-btn-text');
+    const iconUse = favBtn.querySelector('use');
 
     if (this.isFavorite) {
-      favBtn.innerHTML = `
-        Remove from favorites
-        <svg class="modal-icon-heart">
-          <use href="./img/icons.svg#icon-trash"></use>
-        </svg>
-      `;
+      btnText.textContent = 'Remove from favorites';
+      iconUse.setAttribute('href', './img/icons.svg#icon-trash');
       favBtn.classList.add('is-favorite');
-
       this.saveToFavorites();
     } else {
-      favBtn.innerHTML = `
-        Add to favorites
-        <svg class="modal-icon-heart">
-          <use href="./img/icons.svg#icon-heart"></use>
-        </svg>
-      `;
+      btnText.textContent = 'Add to favorites';
+      iconUse.setAttribute('href', './img/icons.svg#icon-heart');
       favBtn.classList.remove('is-favorite');
-
       removeFromFavorites(this.currentExerciseId);
     }
-
-    favBtn.style.transform = 'scale(0.95)';
-    setTimeout(() => {
-      favBtn.style.transform = 'scale(1)';
-    }, 200);
   }
 
   saveToFavorites() {
