@@ -1,6 +1,7 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import { addRatingRequest } from './api-service';
+import iconSvg from '/img/icons.svg';
 
 export class ModalWindowRating {
   static instance = null;
