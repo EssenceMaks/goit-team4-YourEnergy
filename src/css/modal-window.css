@@ -216,13 +216,32 @@
 }
 
 .modal-favorites-btn:hover,
+.modal-favorites-btn.is-favorite:hover {
+  border: 1px solid var(--white-color);
+  color: var(--white-color);
+  background-color: transparent;
+}
+
+/* .modal-favorites-btn.is-favorite .modal-icon-heart,
+.modal-favorites-btn.is-favorite .modal-icon-delete {
+  stroke: var(--black-color);
+  transition: stroke var(--anim-duration) var(--anim-timing-function);
+} */
+
+.modal-favorites-btn:hover .modal-icon-heart,
+.modal-favorites-btn:hover .modal-icon-delete {
+  stroke: var(--white-color);
+  transition: stroke var(--anim-duration) var(--anim-timing-function);
+}
+
+/* .modal-favorites-btn:hover,
 .modal-favorites-btn.is-favorite:hover,
 .modal-favorites-btn:focus,
 .modal-favorites-btn.is-favorite:focus {
   border: 1px solid var(--white-color);
   color: var(--white-color);
   background-color: transparent;
-}
+} */
 
 .modal-icon-heart,
 .modal-icon-delete {
@@ -234,27 +253,27 @@
   transition: stroke var(--anim-duration) var(--anim-timing-function);
 }
 
-.modal-favorites-btn:hover .modal-icon-heart,
+/* .modal-favorites-btn:hover .modal-icon-heart,
 .modal-favorites-btn:hover .modal-icon-delete,
 .modal-favorites-btn:focus .modal-icon-heart,
 .modal-favorites-btn:focus .modal-icon-delete {
   stroke: var(--white-color);
   transition: stroke var(--anim-duration) var(--anim-timing-function);
-}
+} */
 
-.modal-favorites-btn.is-favorite .modal-icon-heart,
+/* .modal-favorites-btn.is-favorite .modal-icon-heart,
 .modal-favorites-btn.is-favorite .modal-icon-delete {
   stroke: var(--black-color);
   transition: stroke var(--anim-duration) var(--anim-timing-function);
-}
+} */
 
-.modal-favorites-btn.is-favorite:hover .modal-icon-heart,
+/* .modal-favorites-btn.is-favorite:hover .modal-icon-heart,
 .modal-favorites-btn.is-favorite:hover .modal-icon-delete,
 .modal-favorites-btn.is-favorite:focus .modal-icon-heart,
 .modal-favorites-btn.is-favorite:focus .modal-icon-delete {
   stroke: var(--white-color);
   transition: stroke var(--anim-duration) var(--anim-timing-function);
-}
+} */
 
 .modal-rating-btn {
   border: 1px solid var(--white-color);
