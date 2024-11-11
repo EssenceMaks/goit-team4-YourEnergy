@@ -2,6 +2,16 @@ import iconSvg from '/img/icons.svg';
 import { capitalizeFirstLetter } from './stringUtils';
 
 export default function createWorkoutsMarkup(cards) {
+  const screenWidth = window.innerWidth;
+  const currentPath = window.location.pathname;
+  let hideRating = '';
+  let hideTrash = 'hide';
+
+  if (currentPath.includes('favorites.html')) {
+    hideRating = 'hide';
+    hideTrash = '';
+  }
+
   return cards
     .sort((a, b) => a.name.localeCompare(b.name))
     .map(({ _id, name, burnedCalories, bodyPart, target, gifUrl, rating }) => {
@@ -13,7 +23,7 @@ export default function createWorkoutsMarkup(cards) {
             <div class="card-header">
               <div class="card-header_left-side">
                 <span class="label">workout</span>
-                <div class="rating-container">
+                <div class="rating-container ${hideRating}">
                   <span class="rating">${formattedRating}</span>
                   <svg
                     class="star"
@@ -25,7 +35,7 @@ export default function createWorkoutsMarkup(cards) {
                     <use x="0" y="0" href="${iconSvg}#icon-Star"></use>
                   </svg>
                 </div>
-                <button class="trash-container hide">
+                <button class="trash-container ${hideTrash}">
                   <svg width="16" height="16">
                     <use href="${iconSvg}#icon-trash"></use>
                   </svg>
