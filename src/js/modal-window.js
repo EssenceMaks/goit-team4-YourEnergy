@@ -214,12 +214,10 @@ export class ModalWindow {
       btnText.textContent = 'Remove from favorites';
       iconUse.setAttribute('href', getIconPath('trash'));
       favBtn.classList.add('is-favorite');
-      this.saveToFavorites();
     } else {
       btnText.textContent = 'Add to favorites';
       iconUse.setAttribute('href', getIconPath('heart'));
       favBtn.classList.remove('is-favorite');
-      removeFromFavorites(this.currentExerciseId);
     }
   }
 
