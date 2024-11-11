@@ -32,7 +32,6 @@ async function renderWorkoutsByCategory(
       page,
       limit
     );
-    console.log(`Request URL: ${requestUrl}`);
 
     const response = await fetch(requestUrl);
     if (!response.ok) {
@@ -40,7 +39,6 @@ async function renderWorkoutsByCategory(
     }
 
     const data = await response.json();
-    console.log('Received data:', data);
     
     if (workoutsContainer) {
       workoutsContainer.innerHTML = createWorkoutsMarkup(data.results);
@@ -93,7 +91,7 @@ async function renderWorkoutsByCategory(
 }
 
 function setupPagination(totalPages, currentPage) {
-  console.log('Setting up pagination:', { totalPages, currentPage });
+  // console.log('Setting up pagination:', { totalPages, currentPage });
   
   if (!workoutsPagination) {
     console.error('Pagination container not found');
@@ -116,7 +114,7 @@ function setupPagination(totalPages, currentPage) {
         e.preventDefault();
         
         const selectedPage = parseInt(pageElement.getAttribute('data-index')) + 1;
-        console.log('Pagination clicked, page:', selectedPage);
+        // console.log('Pagination clicked, page:', selectedPage);
 
         renderWorkoutsByCategory(
           currentFilters.bodypart,
