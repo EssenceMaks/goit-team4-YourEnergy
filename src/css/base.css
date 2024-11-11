@@ -51,8 +51,8 @@ button {
 body {
   display: flex;
   flex-direction: column;
-  min-width: calc(100vw - 8px); /* вертаємо бо є пристрої що мажуть взяти іншу ширину і вираховуємо ширину скролбару */
-  min-height: 100vh; /* вертаємо бо є пристрої що мажуть взяти іншу ширину і виправляємо фон в favorites */
+  min-width: calc(100vw - 8px); 
+  min-height: 100vh; 
   box-sizing: border-box;
   border-radius: 0; 
   overflow-x: hidden;

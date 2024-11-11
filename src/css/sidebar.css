@@ -156,6 +156,7 @@
   .sidebar-quote-container,
   .sidebar-sports-info {
     max-width: 400px;
+    width: 400px;
   }
   .sidebar-quote-image {
     width: 288px;
@@ -175,6 +176,7 @@
   .sidebar-quote-container,
   .sidebar-sports-info {
     max-width: none;
+    width: 444px;
   }
 
   .sidebar-quote-container {
