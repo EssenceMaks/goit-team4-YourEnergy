@@ -1,16 +1,10 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
+
 @import url('./reset.css');
 @import url('./base.css');
 @import url('./container.css');
 @import url('./animations.css');
 
-/* Sections style */
+
 @import url('./header.css');
 @import url('./menu.css');
 @import url('./hero.css');
@@ -25,6 +19,6 @@
 @import url('./search-filters.css');
 @import url('./favorites.css');
 
-/* Временно оставляем старые импорты для обратной совместимости */
+
 @import url('../partials/components/pagination/PaginationStyles.css');
 

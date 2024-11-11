@@ -38,13 +38,13 @@
     border: 1px dashed #999;
 }
 
-/* Добавляем визуальные индикаторы */
+
 .header-block { background: #e3f2fd; }
 .content-1-block { background: #e8f5e9; }
 .content-2-block { background: #fff3e0; }
 .footer-block { background: #fafafa; }
 
-/* Темная тема */
+
 [data-theme="dark"] .dev-drive-structure {
     background: #2c2c2c;
     color: #fff;
@@ -69,7 +69,7 @@
     border-color: #555;
 }
 
-/* Добавьте эти стили к существующим */
+
 
 .code-example {
     margin: 20px 0;
@@ -104,13 +104,13 @@ code {
     color: #6a9955;
 }
 
-/* Поддержка темной темы */
+
 [data-theme="dark"] .code-block {
     background: #2d2d2d;
     border: 1px solid #404040;
 }
 
-/* Стили для скролла в блоке кода */
+
 .code-block::-webkit-scrollbar {
     height: 8px;
     background-color: #1e1e1e;
@@ -125,7 +125,7 @@ code {
     background-color: #1e1e1e;
 }
 
-/* Подсветка синтаксиса */
+
 .code-block .tag { color: #569cd6; }         /* HTML теги */
 .code-block .attr { color: #9cdcfe; }        /* Атрибуты */
 .code-block .string { color: #ce9178; }      /* Строки */
