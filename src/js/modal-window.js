@@ -1,12 +1,7 @@
 import { capitalizeFirstLetter } from './markup/stringUtils';
 import { removeFromFavorites } from './markup/favoritesUtils';
 import { setStartRating } from './set-star-rating';
-import { getIconPath } from './utils/iconPaths';
-import {fetchAndRenderFavorites} from './favorites';
-
-const BASE_URL = window.location.hostname === 'localhost' 
-  ? '' 
-  : '/goit-team4-YourEnergy';
+import iconSvg from '/img/icons.svg';
 
 export class ModalWindow {
   static instance = null;
@@ -101,11 +96,11 @@ export class ModalWindow {
 
     if (this.isFavorite) {
       btnText.textContent = 'Remove from favorites';
-      iconUse.setAttribute('href', getIconPath('trash'));
+      iconUse.setAttribute('href', `${iconSvg}#icon-trash`);
       favBtn.classList.add('is-favorite');
     } else {
       btnText.textContent = 'Add to favorites';
-      iconUse.setAttribute('href', getIconPath('heart'));
+      iconUse.setAttribute('href', `${iconSvg}#icon-heart`);
       favBtn.classList.remove('is-favorite');
     }
   }
@@ -213,12 +208,14 @@ export class ModalWindow {
 
     if (this.isFavorite) {
       btnText.textContent = 'Remove from favorites';
-      iconUse.setAttribute('href', getIconPath('trash'));
+      iconUse.setAttribute('href', `${iconSvg}#icon-trash`);
       favBtn.classList.add('is-favorite');
+      this.saveToFavorites();
     } else {
       btnText.textContent = 'Add to favorites';
-      iconUse.setAttribute('href', getIconPath('heart'));
+      iconUse.setAttribute('href', `${iconSvg}#icon-heart`);
       favBtn.classList.remove('is-favorite');
+      removeFromFavorites(this.currentExerciseId);
     }
   }
 
@@ -230,10 +227,6 @@ export class ModalWindow {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     favorites.push(exerciseData);
     localStorage.setItem('favorites', JSON.stringify(favorites));
-    const currentPath = window.location.pathname;
-    if (currentPath.includes('favorites')) {
-      fetchAndRenderFavorites();
-    }
   }
 
   openRatingModal() {
