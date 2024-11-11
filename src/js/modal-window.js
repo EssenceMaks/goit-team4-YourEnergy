@@ -2,6 +2,7 @@ import { capitalizeFirstLetter } from './markup/stringUtils';
 import { removeFromFavorites } from './markup/favoritesUtils';
 import { setStartRating } from './set-star-rating';
 import { getIconPath } from './utils/iconPaths';
+import {fetchAndRenderFavorites} from './favorites';
 
 export class ModalWindow {
   static instance = null;
@@ -227,6 +228,10 @@ export class ModalWindow {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     favorites.push(exerciseData);
     localStorage.setItem('favorites', JSON.stringify(favorites));
+    const currentPath = window.location.pathname;
+    if (currentPath.includes('favorites')) {
+      fetchAndRenderFavorites();
+    }
   }
 
   openRatingModal() {
