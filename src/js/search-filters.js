@@ -105,7 +105,7 @@ async function loadExercises(categoryName, keyword = '') {
 // Функція для відображення вправ
 function displayExercises(exercises) {
   // Тут додайте розмітку та стилі для відображення знайдених вправ
-  console.log('Exercises found:', exercises); // Лог для тестування
+  // console.log('Exercises found:', exercises); // Лог для тестування
 }
 
 // Ініціалізація: Завантажуємо всі категорії на старті
