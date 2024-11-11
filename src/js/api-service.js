@@ -49,8 +49,8 @@ export const exerciseInfoRequest = id => {
 };
 
 export const addRatingRequest = async (id, ratingData) => {
-  console.log('Making request to:', `${baseUrl()}/exercises/${id}/rating`);
-  console.log('With data:', ratingData);
+  // console.log('Making request to:', `${baseUrl()}/exercises/${id}/rating`);
+  // console.log('With data:', ratingData);
 
   try {
     const formattedData = {

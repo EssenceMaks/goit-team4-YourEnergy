@@ -12,6 +12,7 @@ const categoriesPagination = document.querySelector('.favorites-pagination');
 let getFavorites = [];
 let dataList = [];
 let currentPage = 0;
+const textContext = "It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.";
 
 if (currentPath.includes('favorites.html')) {
   menuItems.forEach(item => item.classList.remove('active'));
@@ -23,6 +24,7 @@ export async function fetchAndRenderFavorites() {
   getFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
   if (!getFavorites || getFavorites.length === 0) {
     favoritesText.style.display = 'block';
+    favoritesText.textContent = textContext;
     favoritesCards.innerHTML = '';
     favoritesCards.style.display = 'none';
     categoriesPagination.style.display = 'none';
@@ -62,7 +64,6 @@ export async function fetchAndRenderFavorites() {
       workoutMarkup = createWorkoutsMarkup(dataList);
       favoritesText.style.display = 'none';
       favoritesCards.innerHTML = workoutMarkup;
-      // changeTrash();
       categoriesPagination.innerHTML = '';
     } else {
       workoutMarkup = createWorkoutsMarkup(
@@ -104,18 +105,6 @@ export async function fetchAndRenderFavorites() {
             window.modalWindow = new ModalWindow();
           }
           window.modalWindow.open(exerciseData);
-
-          // --------------якщо відкрили модалку, видалили картку, оновити це в розмітці---------
-
-          // const closeBTtn = document.querySelector('.modal-close-btn');
-          // closeBTtn.addEventListener('click', () => {
-          //   const newFavorites =
-          //     JSON.parse(localStorage.getItem('favorites')) || [];
-          //   if (JSON.stringify(getFavorites) !== JSON.stringify(newFavorites)) {
-          //     getFavorites = newFavorites;
-          //     fetchAndRenderFavorites();
-          //   }
-          // })
         } catch (error) {
           console.error('Error opening modal:', error);
         }
@@ -130,7 +119,7 @@ export async function fetchAndRenderFavorites() {
     trash.classList.remove('hide');
     trash.addEventListener('click', deleteFromFavorites);
   });
-};
+}
 
 function deleteFromFavorites(e) {
   const workoutCard = e.target.closest('.workouts-card');
@@ -141,6 +130,7 @@ function deleteFromFavorites(e) {
 
   if (!getFavorites || getFavorites.length === 0) {
     favoritesText.style.display = 'block';
+    favoritesText.textContent = textContext;
     favoritesCards.innerHTML = '';
     favoritesCards.style.display = 'none';
     categoriesPagination.style.display = 'none';
@@ -181,7 +171,6 @@ function handlePagination(e) {
   const pageItems = dataList.slice(startIndex, endIndex);
 
   favoritesCards.innerHTML = createWorkoutsMarkup(pageItems);
-  // changeTrash();
 }
 
 function changeTrash() {
@@ -195,4 +184,3 @@ function changeTrash() {
   });
 }
 
-// fetchAndRenderFavorites();
