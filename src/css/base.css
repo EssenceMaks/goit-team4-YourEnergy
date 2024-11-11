@@ -51,8 +51,14 @@ button {
 body {
   display: flex;
   flex-direction: column;
+  min-width: calc(100vw - 8px); /* вертаємо бо є пристрої що мажуть взяти іншу ширину і вираховуємо ширину скролбару */
+  min-height: 100vh; /* вертаємо бо є пристрої що мажуть взяти іншу ширину і виправляємо фон в favorites */
+  box-sizing: border-box;
+  border-radius: 0; 
+  overflow-x: hidden;
   background-color: var(--white-color);
   margin: 0;
+
 }
 
 .m-categories,
@@ -115,8 +121,46 @@ main {
   }
 }
 
-/* прибрати виккористовую в цілях тестування sidebar*/
-
+/* дозволяємо скрол тільки для html/body */
 html {
-  scroll-behavior: smooth; /* Делаем прокрутку плавной */
+  scroll-behavior: smooth; 
+  background-color: var(--white-color);
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+
+
+/* стилізація основного скролбару */
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent; /* прозорий фон */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* прозора доріжка */
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent; /* початково прозорий повзунок */
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  width: 8px;
+  background-color: var(--border-color)
+}
+
+/* показуємо повзунок тільки при скролі */
+:hover::-webkit-scrollbar-thumb,
+:focus::-webkit-scrollbar-thumb,
+:active::-webkit-scrollbar-thumb {
+  background: var(--black-color); /* напівпрозорий сірий */
+}
+
+/* при наведенні на повзунок робимо його темнішим */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 156, 160, 0.8);
+}
+
+/* клас для елементів, яким потрібен скрол */
+.scrollable-element {
+  overflow-y: auto;
 }
