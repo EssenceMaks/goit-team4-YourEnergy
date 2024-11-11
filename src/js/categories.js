@@ -20,7 +20,7 @@ export async function loadCategories(currentCategoryName) {
 
   try {
     const data = await getCategories(currentCategoryName);
-    // console.log('Categories data:', data);
+    console.log('Categories data:', data);
 
     if (categoriesPagination) {
       categoriesPagination.innerHTML = '';
@@ -105,7 +105,7 @@ function openCategory(e) {
     updateHeaderTitle(categoryItem.dataset.name);
     const categoryFilter = categoryItem.dataset.filter;
     currentCategoryFilter = categoryFilter;
-    // console.log(categoryName)
+    
     let limit = window.innerWidth <= 768 ? 8 : 10;
 
     switch (categoryFilter) {
