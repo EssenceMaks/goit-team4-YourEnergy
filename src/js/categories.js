@@ -106,16 +106,17 @@ function openCategory(e) {
     const categoryFilter = categoryItem.dataset.filter;
     currentCategoryFilter = categoryFilter;
     console.log(categoryName)
+    let limit = window.innerWidth <= 768 ? 8 : 10;
 
     switch (categoryFilter) {
       case 'Muscles':
-        renderWorkoutsByCategory('', categoryName, '', '', 1, 10);
+        renderWorkoutsByCategory('', categoryName, '', '', 1, limit);
         break;
       case 'Body parts':
-        renderWorkoutsByCategory(categoryName, '', '', '', 1, 10);
+        renderWorkoutsByCategory(categoryName, '', '', '', 1, limit);
         break;
       case 'Equipment':
-        renderWorkoutsByCategory('', '', categoryName, '', 1, 10);
+        renderWorkoutsByCategory('', '', categoryName, '', 1, limit);
         break;
     }
   }

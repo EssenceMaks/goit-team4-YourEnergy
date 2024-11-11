@@ -25,11 +25,11 @@ export default function createWorkoutsMarkup(cards) {
                     <use x="0" y="0" href="${iconSvg}#icon-Star"></use>
                   </svg>
                 </div>
-                <div class="trash-container hide">
+                <button class="trash-container hide">
                   <svg width="16" height="16">
-                    <use href="./img/icons.svg#icon-trash"></use>
+                    <use href="${iconSvg}#icon-trash"></use>
                   </svg>
-                </div>
+                </button>
                </div>
               <button type="button" class="workout-start-btn">
                 Start

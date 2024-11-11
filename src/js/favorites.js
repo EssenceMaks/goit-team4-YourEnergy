@@ -6,37 +6,6 @@ import { ModalWindow } from './modal-window';
 
 const currentPath = window.location.pathname;
 
-let imageFavorites = document.querySelector('.fav-picture');
-if (imageFavorites) {
-  imageFavorites.outerHTML = `
-    <picture>
-      <source
-        media="(min-width: 1440px)"
-        srcset="
-          ./img/sidebar/favorites/favorites-des-1x.jpg 1x,
-          ./img/sidebar/favorites/favorites-des-2x.jpg 2x
-        "
-      />
-      <source
-        media="(min-width: 768px)"
-        srcset=" 
-          ./img/sidebar/favorites/favorites-tab-1x.jpg 1x,
-          ./img/sidebar/favorites/favorites-tab-2x.jpg 2x
-        "
-      />
-      <img
-        class="sidebar-quote-image"
-        srcset=" 
-          ./img/sidebar/favorites/favorites-mob-1x.jpg 1x,
-          ./img/sidebar/favorites/favorites-mob-2x.jpg 2x
-        "
-        src="./img/sidebar/favorites/favorites-mob-1x.jpg"
-        alt="sidebar-container"
-        loading="lazy"
-      />
-    </picture>
-  `;
-}
 
 const menuItems = document.querySelectorAll('.menu-item');
 

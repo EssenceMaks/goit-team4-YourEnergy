@@ -1,7 +1,7 @@
 export const generatePages = (totalPages, currentPage) => {
   let pagesFragment = new DocumentFragment();
   for(let i = 0; i < totalPages; i++) {
-    let p = document.createElement('p');
+    let p = document.createElement('li');
     p.setAttribute('data-index', i);
     p.innerHTML = i + 1;
     p.classList.add('pagination-page');
