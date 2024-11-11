@@ -152,7 +152,7 @@ function handlePagination(e) {
   const page = Number(e.target.dataset.index);
   currentPage = page;
   categoriesPagination.setAttribute('data-current', currentPage);
-  let pages = categoriesPagination.querySelectorAll('p');
+  let pages = categoriesPagination.querySelectorAll('li');
   pages.forEach(pag => {
     pag.classList.remove('selected');
   });
