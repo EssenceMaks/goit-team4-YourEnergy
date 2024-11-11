@@ -1,6 +1,6 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import { addRatingRequest, exerciseUrl } from './api-service';
+import { addRatingRequest } from './api-service';
 
 export class ModalWindowRating {
   static instance = null;
@@ -119,53 +119,22 @@ export class ModalWindowRating {
       return;
     }
 
-    const ratingData = {
-      rate: parseFloat(selectedRating.value),
-      email: email.toLowerCase(),
-      review: comment.trim(),
-    };
-
-    console.log('Validation check:', {
-      isRateValid:
-        Number.isFinite(ratingData.rate) &&
-        ratingData.rate >= 1 &&
-        ratingData.rate <= 5,
-      isEmailValid: emailPattern.test(ratingData.email),
-      isReviewValid: ratingData.review.length > 0,
-    });
-
     try {
-      console.log('Exercise ID:', this.currentExerciseId);
-      console.log('Rating data:', ratingData);
-      console.log(
-        'Request URL:',
-        `${exerciseUrl()}/${this.currentExerciseId}/rating`
-      );
-
-      const response = await addRatingRequest(
-        this.currentExerciseId,
-        ratingData
-      );
-
-      console.log('Full response:', response);
+      const response = await addRatingRequest(this.currentExerciseId, {
+        rate: parseFloat(selectedRating.value),
+        email: email.toLowerCase(),
+        review: comment.trim(),
+      });
 
       if (response.data) {
         this.closeRatingModal();
         this.showNotification('Rating added successfully', 'success');
       }
     } catch (error) {
-      let errorMessage = 'Failed to add rating';
-
-      // Обробляємо різні типи помилок
-      if (error.response?.data?.message) {
-        if (error.response.data.message.includes('email already exists')) {
-          errorMessage = 'Such email already exists';
-        } else {
-          errorMessage = error.response.data.message;
-        }
-      }
-
-      this.showNotification(errorMessage, 'error');
+      this.showNotification(
+        error.response?.data?.message || 'Failed to add rating',
+        'error'
+      );
     }
   }
 
