@@ -1,6 +1,6 @@
 import axios from "axios";
-// import Notiflix from 'notiflix';
-// залишаю пок що через  alert, узгодимо бібліотеку буду доробляти
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 import {subscriptionRequest} from './api-service';
 
 
@@ -24,17 +24,18 @@ const loadFromLocalStorage = () => {
 
 loadFromLocalStorage();
 
-form.addEventListener('input', (event) => {
-    const { name, value } = event.target;
-    formData[name] = value.trim();
-    saveToLocalStorage();
-});
-
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     if (!emailInput.validity.valid) {
-        alert('Please enter a valid email');
+        iziToast.error({
+            title: 'Error',
+            message: 'Please enter a valid email',
+            position: 'topRight',
+            timeout: 3000,
+            backgroundColor: '#EF4040',
+            messageColor: '#fff'
+        });
         return;
     }
 
@@ -45,18 +46,51 @@ form.addEventListener('submit', async (event) => {
 
         if (response.data.error) {
             if (response.status === 409) {
-                alert('This email is already subscribed.');
+                iziToast.warning({
+                    title: 'Warning',
+                    message: 'This email is already subscribed.',
+                    position: 'topRight',
+                    timeout: 3000,
+                    messageColor: '#fff'
+                });
             } else {
-                alert('Subscription failed. Please try again later.');
+                iziToast.error({
+                    title: 'Error',
+                    message: 'Subscription failed. Please try again later.',
+                    position: 'topRight',
+                    timeout: 3000,
+                    backgroundColor: '#EF4040',
+                    messageColor: '#fff'
+                });
             }
         } else {
-            alert('Subscription successful!');
+            iziToast.success({
+                title: '',
+                message: 'Subscription successful!',
+                position: 'topRight',
+                timeout: 3000,
+                backgroundColor: '#64B880',
+                messageColor: '#fff'
+            });
         }
     } catch (error) {
         if (error.response && error.response.status === 409) {
-            alert('This email is already subscribed.');
+            iziToast.warning({
+                title: 'Warning',
+                message: 'This email is already subscribed.',
+                position: 'topRight',
+                timeout: 3000,
+                messageColor: '#fff'
+            });
         } else {
-            alert('Subscription failed. Please try again later.');
+            iziToast.error({
+                title: 'Error',
+                message: 'Subscription failed. Please try again later.',
+                position: 'topRight',
+                timeout: 3000,
+                backgroundColor: '#EF4040',
+                messageColor: '#fff'
+            });
         }
     }
 
