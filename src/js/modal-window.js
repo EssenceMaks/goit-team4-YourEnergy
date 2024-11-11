@@ -1,6 +1,7 @@
 import { capitalizeFirstLetter } from './markup/stringUtils';
 import { removeFromFavorites } from './markup/favoritesUtils';
 import { setStartRating } from './set-star-rating';
+import { getIconPath } from './utils/iconPaths';
 
 export class ModalWindow {
   static instance = null;
@@ -14,13 +15,6 @@ export class ModalWindow {
     this.closeBtn = document.querySelector('[data-modal-close]');
     this.isOpen = false;
     this.isFavorite = false;
-
-    if (!this.backdrop) {
-      console.error('Modal backdrop not found');
-    }
-    if (!this.closeBtn) {
-      console.error('Modal close button not found');
-    }
 
     this.ratingBackdrop = document.querySelector('[data-rating-modal]');
     this.ratingCloseBtn = document.querySelector('[data-rating-close]');
@@ -102,11 +96,11 @@ export class ModalWindow {
 
     if (this.isFavorite) {
       btnText.textContent = 'Remove from favorites';
-      iconUse.setAttribute('href', './img/icons.svg#icon-trash');
+      iconUse.setAttribute('href', getIconPath('trash'));
       favBtn.classList.add('is-favorite');
     } else {
       btnText.textContent = 'Add to favorites';
-      iconUse.setAttribute('href', './img/icons.svg#icon-heart');
+      iconUse.setAttribute('href', getIconPath('heart'));
       favBtn.classList.remove('is-favorite');
     }
   }
@@ -214,12 +208,12 @@ export class ModalWindow {
 
     if (this.isFavorite) {
       btnText.textContent = 'Remove from favorites';
-      iconUse.setAttribute('href', './img/icons.svg#icon-trash');
+      iconUse.setAttribute('href', getIconPath('trash'));
       favBtn.classList.add('is-favorite');
       this.saveToFavorites();
     } else {
       btnText.textContent = 'Add to favorites';
-      iconUse.setAttribute('href', './img/icons.svg#icon-heart');
+      iconUse.setAttribute('href', getIconPath('heart'));
       favBtn.classList.remove('is-favorite');
       removeFromFavorites(this.currentExerciseId);
     }
@@ -264,7 +258,6 @@ export class ModalWindow {
       .value.trim();
 
     if (!email || !comment) {
-      console.log('Please fill in all fields');
       return;
     }
 

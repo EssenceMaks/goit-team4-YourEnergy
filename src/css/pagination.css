@@ -40,12 +40,10 @@
   height: 32px;
 }
 
-/* Специфичные стили для категорий */
 .m-categories .pagination {
   margin-top: auto;
 }
 
-/* Специфичные стили для воркаутов */
 .m-workouts .pagination {
   margin-top: 20px;
 }

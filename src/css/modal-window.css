@@ -253,27 +253,6 @@
   transition: stroke var(--anim-duration) var(--anim-timing-function);
 }
 
-/* .modal-favorites-btn:hover .modal-icon-heart,
-.modal-favorites-btn:hover .modal-icon-delete,
-.modal-favorites-btn:focus .modal-icon-heart,
-.modal-favorites-btn:focus .modal-icon-delete {
-  stroke: var(--white-color);
-  transition: stroke var(--anim-duration) var(--anim-timing-function);
-} */
-
-/* .modal-favorites-btn.is-favorite .modal-icon-heart,
-.modal-favorites-btn.is-favorite .modal-icon-delete {
-  stroke: var(--black-color);
-  transition: stroke var(--anim-duration) var(--anim-timing-function);
-} */
-
-/* .modal-favorites-btn.is-favorite:hover .modal-icon-heart,
-.modal-favorites-btn.is-favorite:hover .modal-icon-delete,
-.modal-favorites-btn.is-favorite:focus .modal-icon-heart,
-.modal-favorites-btn.is-favorite:focus .modal-icon-delete {
-  stroke: var(--white-color);
-  transition: stroke var(--anim-duration) var(--anim-timing-function);
-} */
 
 .modal-rating-btn {
   border: 1px solid var(--white-color);
@@ -396,7 +375,6 @@
   }
 }
 
-/* Додаємо стилі для модального вікна рейтингу */
 .rating-modal {
   position: absolute;
   top: 50%;
