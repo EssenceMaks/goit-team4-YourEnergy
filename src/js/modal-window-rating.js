@@ -75,6 +75,7 @@ export class ModalWindowRating {
       this.backdrop.classList.add('is-hidden');
       this.ratingBackdrop.classList.remove('is-hidden');
       this.updateRatingDisplay('0.0');
+      document.body.classList.add('scroll-lock');
 
       // Скидаємо вибір радіокнопок
       const radioButtons = document.querySelectorAll('.rating-form-radio');

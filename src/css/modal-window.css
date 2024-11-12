@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+.scroll-lock {
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+}
+
 .modal-backdrop {
   position: fixed;
   top: 0;

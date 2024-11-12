@@ -81,7 +81,7 @@ export class ModalWindow {
     if (this.backdrop) {
       this.backdrop.classList.remove('is-hidden');
     }
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('scroll-lock');
 
     await this.updateContent(exerciseData);
 
@@ -120,7 +120,7 @@ export class ModalWindow {
 
     document.onkeydown = this.originalEscapeHandler;
 
-    document.body.style.overflow = '';
+    document.body.classList.remove('scroll-lock');
   }
 
   async updateContent(data) {
