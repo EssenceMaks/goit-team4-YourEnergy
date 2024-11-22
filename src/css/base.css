@@ -51,7 +51,7 @@ button {
 body {
   display: flex;
   flex-direction: column;
-  min-width: calc(100vw - 8px); 
+  min-width: calc(100vw - 28px); 
   min-height: 100vh; 
   box-sizing: border-box;
   border-radius: 0; 
